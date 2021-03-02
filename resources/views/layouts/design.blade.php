@@ -128,7 +128,8 @@
 		============================================ -->
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- tawk chat JS
-
+    -->
+    <script src="{{ asset('https:/kitfontawesome.com/2c36e9b7b1.js')}}"></script>
 </body>
 
 </html>
