@@ -1,20 +1,20 @@
-    <!-- Start Left menu area -->
+        <!-- Start Left menu area -->
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
+                <a href="index.html"><img class="main-logo" src="{{ asset('img/Captura.png')}}" alt="" /></a>
+                <strong><a href="index.html"><img src="{{ asset('img/logo/logosn.png')}}" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
                             <a class="has-arrow" href="index.html">
-								   <span class="educate-icon educate-home icon-wrap"></span>
+                                 <i class="bi bi-globe"></i>
 								   <span class="mini-click-non">Education</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                                <li><a title="Dashboard v.1" href="index.html"><span class="bi bi-globe">Dashboard v.1</span></a></li>
                                 <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
@@ -155,7 +155,7 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="bi bi-globe"></span></a>
                                     <ul class="collapse dropdown-header-top">
                                         <li><a href="index.html">Dashboard v.1</a></li>
                                         <li><a href="index-1.html">Dashboard v.2</a></li>
@@ -165,7 +165,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="events.html">Event</a></li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Professors <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Professors <span class="bi bi-globe"></span></a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
                                         <li><a href="all-professors.html">All Professors</a>
                                         </li>

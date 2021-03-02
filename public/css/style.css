@@ -195,6 +195,7 @@ body {}
 }
 #sidebar.active .sidebar-header .main-logo{
 	display:none;
+  
 }
 #sidebar.active .sidebar-header h3{
 	display:none;

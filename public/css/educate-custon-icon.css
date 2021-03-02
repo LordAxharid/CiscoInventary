@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'educate-icon';
   src:
-    url('fonts/educate-icon.ttf?kufm5h') format('truetype'),
+    url('fonts/educate-icon.ttf?kufm5h')format('truetype'),
     url('fonts/educate-icon.woff?kufm5h') format('woff'),
-    url('fonts/educate-icon.svg?kufm5h#educate-icon') format('svg');
+    url('fonts/educate-icon.svg')format('svg');
   font-weight: normal;
   font-style: normal;
 }
