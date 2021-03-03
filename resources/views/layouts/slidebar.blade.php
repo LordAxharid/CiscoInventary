@@ -14,7 +14,7 @@
 								   <span class="mini-click-non">PruebasHader</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="bi bi-globe">Dashboard v.1</span></a></li>
+                                <li><a title="Dashboard v.1" href="index.html"><span class="bi bi-globe">dash v.1</span></a></li>
                                 <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                                 <li><a title="Dashboard v.3" href="index-2.html"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
