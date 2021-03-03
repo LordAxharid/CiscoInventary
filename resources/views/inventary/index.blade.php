@@ -2,19 +2,21 @@
 
 @section('content')
  <!-- Static Table Start -->
+ 
+<div class="all-content-wrapper">
  <div class="data-table-area mg-b-15">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
-                        <div class="main-sparkline13-hd">
+                       <div class="main-sparkline13-hd">
                             <h1>Projects <span class="table-project-n">Data</span> Table</h1>
                         </div>
                     </div>
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
-                            <div id="toolbar">
+                            <br><div id="toolbar">
                                 <select class="form-control dt-tb">
                                     <option value="">Export Basic</option>
                                     <option value="all">Export All</option>

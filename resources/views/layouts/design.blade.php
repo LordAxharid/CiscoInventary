@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('css/img/favicon.ico') }}">
    
     <!-- Bootstrap CSS
 		============================================ -->
