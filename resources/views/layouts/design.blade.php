@@ -15,7 +15,7 @@
 
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('css/img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/img/favicon.png') }}">
    
     <!-- Bootstrap CSS
 		============================================ -->
