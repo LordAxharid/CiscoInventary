@@ -15,7 +15,7 @@
 
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon - Copy.png') }}">
    
     <!-- Bootstrap CSS
 		============================================ -->
@@ -68,6 +68,8 @@
 <body>
 
 @include('layouts.header')
+
+
 
 @include('layouts.slidebar')
 
