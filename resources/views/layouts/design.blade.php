@@ -7,6 +7,12 @@
     <title>Cisco Inventary</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}">
+
+    
+    <script src="{{ asset('https://kit.fontawesome.com/68d9183b0a.js')}}" crossorigin="anonymous"></script>
+
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon - Copy.png') }}">
@@ -132,6 +138,42 @@
     <!-- tawk chat JS
     -->
     <script src="{{ asset('https:/kitfontawesome.com/2c36e9b7b1.js')}}"></script>
+     <!-- data table JS
+		============================================ -->
+    <script src="{{ asset('js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('js/data-table/bootstrap-table-export.js')}}"></script>
+    <!--  editable JS
+		============================================ -->
+    <script src="{{ asset('js/editable/jquery.mockjax.js')}}"></script>
+    <script src="{{ asset('js/editable/mock-active.js')}}"></script>
+    <script src="{{ asset('js/editable/select2.js')}}"></script>
+    <script src="{{ asset('js/editable/moment.min.js')}}"></script>
+    <script src="{{ asset('js/editable/bootstrap-datetimepicker.js')}}"></script>
+    <script src="{{ asset('js/editable/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('js/editable/xediable-active.js')}}"></script>
+    <!-- Chart JS
+		============================================ -->
+    <script src="{{ asset('js/chart/jquery.peity.min.js')}}"></script>
+    <script src="{{ asset('js/peity/peity-active.js')}}"></script>
+    <!-- tab JS
+		============================================ -->
+    <script src="{{ asset('js/tab.js')}}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="{{ asset('js/plugins.js')}}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{ asset('js/main.js')}}"></script>
+    <!-- tawk chat JS
+		============================================ -->
+    <script src="{{ asset('js/tawk-chat.js')}}"></script>
+
 </body>
 
 </html>
