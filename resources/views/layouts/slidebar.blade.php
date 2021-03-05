@@ -11,11 +11,7 @@
                         <li class="active">
                             <a class="has-arrow" href="index.html">
                                 <i class="fab fa-airbnb"></i>
-<<<<<<< HEAD
-								   <span class="mini-click-non">Henryprueba</span>
-=======
 								   <span class="mini-click-non">HenryPrueba</span>
->>>>>>> master
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="index.html"><span class="bi bi-globe">Dashboard v.1</span></a></li>
