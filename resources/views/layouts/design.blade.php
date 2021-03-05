@@ -49,6 +49,12 @@
     <!-- mCustomScrollbar CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
+
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/data-table/bootstrap-table.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/data-table/bootstrap-editable.css')}}">
+
     <!-- metisMenu CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu.min.css') }}">
@@ -127,8 +133,7 @@
     <!-- calendar JS
 		============================================ -->
     <script src="{{ asset('js/calendar/moment.min.js') }}"></script>
-    <script src="{{ asset('js/calendar/fullcalendar.min.js') }}"></script>
-    <script src="{{ asset('js/calendar/fullcalendar-active.js') }}"></script>
+    
     <!-- plugins JS
 		============================================ -->
     <script src="{{ asset('js/plugins.js') }}"></script>
@@ -137,7 +142,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- tawk chat JS
     -->
-    <script src="{{ asset('https:/kitfontawesome.com/2c36e9b7b1.js')}}"></script>
+    
      <!-- data table JS
 		============================================ -->
     <script src="{{ asset('js/data-table/bootstrap-table.js')}}"></script>
@@ -172,7 +177,7 @@
     <script src="{{ asset('js/main.js')}}"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="{{ asset('js/tawk-chat.js')}}"></script>
+   
 
 </body>
 
