@@ -83,7 +83,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="far fa-bell" aria-hidden="true" style="color: #009bdd;"></i><span class="indicator-nt"></span></a>
+                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="far fa-bell icon-color" aria-hidden="true" ></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
                                                             <h1>Notifications</h1>
@@ -146,8 +146,8 @@
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 															<img src="{{ asset('img/CristianPhoto.jpg')}}" alt="" />
-															<span class="admin-name" style="color: #009bdd;">Cristian orlando</span>
-															<i class="fas fa-caret-down" style="color: #009bdd;"></i>
+															<span class="admin-name icon-color" style="color: #009bdd;">Cristian orlando</span>
+															<i class="fas fa-caret-down icon-color"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
@@ -162,7 +162,7 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-dice-d6" style="color: #009bdd;"></i></a>
+                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-cog fa-spin icon-color"></i></a>
 
                                                     <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                         <ul class="nav nav-tabs custon-set-tab">
@@ -476,7 +476,7 @@
                                                             <div id="Settings" class="tab-pane fade">
                                                                 <div class="setting-panel-area">
                                                                     <div class="note-heading-indicate">
-                                                                        <h2><i class="fa fa-gears"></i> Settings Panel</h2>
+                                                                        <h2><i class="fas fa-cog fa-spin"></i> Settings Panel</h2>
                                                                         <p> You have 20 Settings. 5 not completed.</p>
                                                                     </div>
                                                                     <ul class="setting-panel-list">

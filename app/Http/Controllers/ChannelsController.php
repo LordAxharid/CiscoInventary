@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Loan;
 use Illuminate\Http\Request;
 
-class LoanController extends Controller
+class ChannelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        return view('channels.index');
     }
 
     /**
@@ -41,10 +40,10 @@ class LoanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Loan  $loan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Loan $loan)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class LoanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Loan  $loan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Loan $loan)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class LoanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Loan  $loan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loan $loan)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class LoanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Loan  $loan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loan $loan)
+    public function destroy($id)
     {
         //
     }
