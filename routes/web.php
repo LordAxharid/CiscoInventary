@@ -16,3 +16,5 @@ Route::get('/', 'studentsController@index');
 Route::get('/inventary', 'inventaryController@index');
 Route::get('/channels', 'ChannelsController@index');
 Route::get('/loans', 'LoansController@index');
+Route::get('/charts', 'ChartsController@index');
+Route::get('/gallery', 'GalleryController@index');

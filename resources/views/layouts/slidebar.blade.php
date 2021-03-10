@@ -37,14 +37,14 @@
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galeria</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">galeria</span></a></li>
+                                <li><a title="All Courses" href="{{ url('/gallery') }}"><span class="mini-sub-pro">galeria</span></a></li>
                             </ul>
                         </li>
                         
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graficos</span></a>
                             <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Graficos</span></a></li>
+                                <li><a title="Bar Charts" href="{{ url('/charts') }}"><span class="mini-sub-pro">Graficos</span></a></li>
                             </ul>
                         </li>
                         
