@@ -2,7 +2,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="{{url ('/') }}"><img class="main-logo d-flex img-flui" src="{{ asset('img/cisco-logo-16.PNG')}}" alt="" /></a>
+                <div class="contenedor"><a href="{{url ('/') }}"><img class="main-logo d-flex img-flui" src="{{ asset('img/cisco-logo-16.PNG')}}" alt="" /></a></div>
+                
                 <strong><a href="index.html"><img src="{{ asset('img/CiscoIconSmall.png')}}" alt="" /></a></strong>
             </div><br>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -13,9 +14,7 @@
                         </li>
 
                         <li>
-                            <a class="has-arrow" href="index.html">
-                                <i class="fab fa-airbnb"></i>
-								   <span class="mini-click-non">HenryPrueba</span>
+                            
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="index.html"><span class="bi bi-globe">Dashboard v.1</span></a></li>
@@ -27,14 +26,10 @@
                         </li>
                        
                         <li>
-<<<<<<< HEAD
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fas fa-user-secret icon-color"></span> <span class="mini-click-non">Professors</span></a>
-=======
                             <a title="Landing Page" href="events.html" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a>
                         </li>
                         <li>
                             <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Professors</span></a>
->>>>>>> hader
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Professors" href="all-professors.html"><span class="mini-sub-pro">All Professors</span></a></li>
                                 <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Add Professor</span></a></li>

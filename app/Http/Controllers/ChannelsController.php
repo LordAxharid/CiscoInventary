@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Models\Loan;
+use App\Models\Channel;
 
-class LoanController extends Controller
+class ChannelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class LoanController extends Controller
      */
     public function index()
     {
-        return view('loans.index');
+        return view('channels.index');
     }
 
     /**
