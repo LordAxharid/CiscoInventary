@@ -1426,6 +1426,7 @@ ul.tab-custon-design, ul.tab-review-design {
 }
 .student-img img{
 	width:100%;
+    height: 250px;
 }
 /*----------------------------------------*/
 /*  13. Courses
@@ -4724,3 +4725,11 @@ div#sparklinehome canvas {
 .icon-color{
     color: #009bdd;
 }
+
+.down-content{
+    margin-top: 6%;
+    text-align: left;
+    margin-left: 30px;
+    color: #009bdd;
+}
+
