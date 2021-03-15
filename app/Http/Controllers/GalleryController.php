@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Loan;
+use App\gallery;
 use Illuminate\Http\Request;
 
-class LoanController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        return view('gallery.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class LoanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Loan  $loan
+     * @param  \App\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Loan $loan)
+    public function show(gallery $gallery)
     {
         //
     }
@@ -52,10 +52,10 @@ class LoanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Loan  $loan
+     * @param  \App\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Loan $loan)
+    public function edit(gallery $gallery)
     {
         //
     }
@@ -64,10 +64,10 @@ class LoanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Loan  $loan
+     * @param  \App\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loan $loan)
+    public function update(Request $request, gallery $gallery)
     {
         //
     }
@@ -75,10 +75,10 @@ class LoanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Loan  $loan
+     * @param  \App\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loan $loan)
+    public function destroy(gallery $gallery)
     {
         //
     }

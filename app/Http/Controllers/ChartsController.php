@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Channel;
+use App\Chart;
 use Illuminate\Http\Request;
 
-class ChannelController extends Controller
+class ChartsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        //
+        return view('charts.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class ChannelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function show(Channel $channel)
+    public function show(Chart $chart)
     {
         //
     }
@@ -52,10 +52,10 @@ class ChannelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function edit(Channel $channel)
+    public function edit(Chart $chart)
     {
         //
     }
@@ -64,10 +64,10 @@ class ChannelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Channel  $channel
+     * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Channel $channel)
+    public function update(Request $request, Chart $chart)
     {
         //
     }
@@ -75,10 +75,10 @@ class ChannelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Channel  $channel
+     * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Channel $channel)
+    public function destroy(Chart $chart)
     {
         //
     }
