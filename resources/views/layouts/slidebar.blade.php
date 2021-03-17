@@ -18,33 +18,33 @@
 								   <span class="mini-click-non">Inventary</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{ url('/inventary') }}"><span class="bi bi-globe">Inventary</span></a></li>
+                                <li><a title="Dashboard v.1" href="{{ url('/Inventary') }}"><span class="bi bi-globe">Inventary</span></a></li>
                             </ul>
                         </li>
                        
                         <li>
                             <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fas fa-network-wired icon-color"></span> <span class="mini-click-non">canales</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="{{ url('/channels') }}"><span class="mini-sub-pro">canales</span></a></li>
+                                <li><a title="All Professors" href="{{ url('/Channels') }}"><span class="mini-sub-pro">canales</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="far fa-handshake icon-color"></span> <span class="mini-click-non">Prestamos</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="{{ url('/loans') }}"><span class="mini-sub-pro">Prestamos</span></a></li>
+                                <li><a title="All Students" href="{{ url('/Loans') }}"><span class="mini-sub-pro">Prestamos</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galeria</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="{{ url('/gallery') }}"><span class="mini-sub-pro">galeria</span></a></li>
+                                <li><a title="All Courses" href="{{ url('/Gallery') }}"><span class="mini-sub-pro">galeria</span></a></li>
                             </ul>
                         </li>
                         
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graficos</span></a>
                             <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Bar Charts" href="{{ url('/charts') }}"><span class="mini-sub-pro">Graficos</span></a></li>
+                                <li><a title="Bar Charts" href="{{ url('/Charts') }}"><span class="mini-sub-pro">Graficos</span></a></li>
                             </ul>
                         </li>
                         
