@@ -17,20 +17,7 @@
                             <h1>Projects <span class="table-project-n">Data</span> Table</h1>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="sparkline11-list responsive-mg-b-30">
-                            <div class="sparkline11-hd">
-                                <div class="main-sparkline11-hd">
-                                   
-                                    <div class="modal-bootstrap modal-login-form">
-                                                <a class="zoomInDown mg-t" href="#" data-toggle="modal" data-target="#zoomInDown1">Modal Test</a>
-                                            </div>
-                                </div>
-                            </div>
-
-                            
-                        </div>
-                    </div>
+                    
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <br><div id="toolbar">
@@ -51,6 +38,7 @@
                                         <th data-field="phone" data-editable="true">Phone</th>
                                         <th data-field="date" data-editable="true">Date</th>
                                         <th data-field="price" data-editable="true">Price</th>
+                                        <th data-field="action" data-editable="false">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,6 +50,13 @@
                                         <td>+8801962067309</td>
                                         <td>Jul 14, 2017</td>
                                         <td>$5455</td>
+                                        <td>   
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                            
+
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -71,6 +66,13 @@
                                         <td>+8801762067304</td>
                                         <td>fab 2, 2017</td>
                                         <td>$8756</td>
+                                       <td>        
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                            
+
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -80,6 +82,11 @@
                                         <td>+8801862067308</td>
                                         <td>Seb 5, 2017</td>
                                         <td>$9875</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -89,6 +96,11 @@
                                         <td>+8801962066547</td>
                                         <td>Oct 10, 2017</td>
                                         <td>$3254</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -98,6 +110,11 @@
                                         <td>+8801962098745</td>
                                         <td>Nov 20, 2017</td>
                                         <td>$58745</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -107,6 +124,11 @@
                                         <td>+8801962254781</td>
                                         <td>Aug 25, 2017</td>
                                         <td>$789879</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -116,6 +138,11 @@
                                         <td>+8801962254863</td>
                                         <td>July 17, 2017</td>
                                         <td>$21424</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -125,6 +152,11 @@
                                         <td>+8801962875469</td>
                                         <td>June 11, 2017</td>
                                         <td>$78978</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -134,6 +166,11 @@
                                         <td>+8801962067524</td>
                                         <td>May 9, 2017</td>
                                         <td>$45645</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -143,6 +180,11 @@
                                         <td>+8801962067457</td>
                                         <td>April 5, 2017</td>
                                         <td>$4564545</td>
+                                        <td>            
+                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                       </td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -333,5 +375,115 @@
    </div>
 </div>
 
+<div id="PrimaryModalalert" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-group-inner">
+                       <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                             <label class="usr">Section</label>
+                          </div>
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                             <input type="text" class="form-control" placeholder="Enter Section" />
+                          </div>
+                       </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <label class="usr">Position</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                              <input type="password" class="form-control" placeholder="Position Ej:A1" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <label for="sel1">Select list:</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <select class="form-control" id="sel1">
+                                <option>Enable</option>
+                                <option>Unable</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <label class="usr">Product</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                              <input type="text" class="form-control" placeholder="Product" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <label class="usr">PDR/Id</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                              <input type="text" class="form-control" placeholder="Ej: CP-79.." />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <label class="usr">Serial</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                              <input type="text" class="form-control" placeholder="Serial" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group-inner">
+                        <div class="row">
+                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                              <label class="comment">Observations</label>
+                           </div>
+                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                           </div>
+                        </div>
+                     </div>
+                 </form>
+            </div>
+
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cancel</a>
+                <a href="#">Process</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="PrimaryModalalert1" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <i class="far fa-trash-alt fa-5x"  style="color: #009bdd;"></i>
+                <h2>Are you sure?</h2>
+                <h3>What do you want to delete?</h3>
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cancel</a>
+                <a href="#">Accept</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
