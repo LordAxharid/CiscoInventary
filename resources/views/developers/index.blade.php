@@ -22,7 +22,7 @@
                             </div>
                             <div class="student-dtl">
                                 <h2>Henry Osman Vega Rios</h2>
-                                <p class="dp">Aprendiz Sena Tec.ADSI</p>
+                               
                                 <p class="dp-ag"><b>Edad:</b> 21 </p>
                             </div>
                         </div>
