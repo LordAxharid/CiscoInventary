@@ -226,7 +226,7 @@
                                            <td>july@example.com</td>
                                            <td>+8801962067309</td>
                                            <td>Dec 1, 2016</td>
-                                           <td>$454554</td>
+                                           <td>$45454</td>
                                        </tr>
                                        <tr>
                                            <td></td>
@@ -235,7 +235,7 @@
                                            <td>john@example.com</td>
                                            <td>+8801962067306</td>
                                            <td>May 9, 2016</td>
-                                           <td>$564555</td>
+                                           <td>$56455</td>
                                        </tr>
                                        <tr>
                                            <td></td>
@@ -244,7 +244,7 @@
                                            <td>mary@example.com</td>
                                            <td>+8801962067305</td>
                                            <td>June 11, 2016</td>
-                                           <td>$454565</td>
+                                           <td>$45455</td>
                                        </tr>
                                        <tr>
                                            <td></td>
