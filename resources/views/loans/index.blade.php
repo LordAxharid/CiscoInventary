@@ -241,7 +241,7 @@
                                            <td></td>
                                            <td>17</td>
                                            <td>Admin Template</td>
-                                           <td>mary@example.com</td>
+                                           <td>may@example.com</td>
                                            <td>+8801962067305</td>
                                            <td>June 11, 2016</td>
                                            <td>$454565</td>
