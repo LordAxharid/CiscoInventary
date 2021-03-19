@@ -2,8 +2,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="{{url ('/') }}"><img class="main-logo" src="{{ asset('img/ciscoIconBig.png')}}" alt="" /></a>
-                <strong><a href="index.html"><img src="{{ asset('img/CiscoIconSmall.png')}}" alt="" /></a></strong>
+                <a href="{{url ('/') }}"><img class="main-logo size-logo" src="{{ asset('img/cisco.png')}}" alt="" /></a>
+                <strong><a href="index.html"><img class="size-logoSmall" src="{{ asset('img/CiscoSmall.png')}}" alt="" /></a></strong>
             </div><br>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -13,39 +13,29 @@
                         </li>
 
                         <li>
-                            <a class="has-arrow" href="index.html">
+                            <a class="" href="{{ url('/Inventary') }}">
                                 <i class="fas fa-boxes icon-color"></i>
-								   <span class="mini-click-non">Inventary</span>
+								   <span  class="mini-click-non">Inventary</span>
 								</a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="{{ url('/Inventary') }}"><span class="bi bi-globe">Inventary</span></a></li>
-                            </ul>
+                           
                         </li>
                        
                         <li>
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fas fa-network-wired icon-color"></span> <span class="mini-click-non">canales</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="{{ url('/Channels') }}"><span class="mini-sub-pro">canales</span></a></li>
-                            </ul>
+                            <a class="" href="{{ url('/Channels') }}" aria-expanded="false"><span class="fas fa-network-wired icon-color"></span> <span class="mini-click-non">canales</span></a>
+                          
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="far fa-handshake icon-color"></span> <span class="mini-click-non">Prestamos</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="{{ url('/Loans') }}"><span class="mini-sub-pro">Prestamos</span></a></li>
-                            </ul>
+                            <a class="" href="{{ url('/Loans') }}" aria-expanded="false"><span class="far fa-handshake icon-color"></span> <span class="mini-click-non">Prestamos</span></a>
+                            
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galeria</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Courses" href="{{ url('/Gallery') }}"><span class="mini-sub-pro">galeria</span></a></li>
-                            </ul>
+                            <a class="" href="{{ url('/Gallery') }}" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galeria</span></a>
+                        
                         </li>
                         
                         <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graficos</span></a>
-                            <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
-                                <li><a title="Bar Charts" href="{{ url('/Charts') }}"><span class="mini-sub-pro">Graficos</span></a></li>
-                            </ul>
+                            <a class="" href="{{ url('/Charts') }}" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graficos</span></a>
+                    
                         </li>
                         
                     </ul>

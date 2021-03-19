@@ -4733,3 +4733,32 @@ div#sparklinehome canvas {
     color: #009bdd;
 }
 
+
+.center-preloader{
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden-backload{
+   
+    overflow: hidden;
+}
+
+
+.gif-preloader{
+    range: url("../assets/img/preloader.gif");
+   
+}
+
+.size-logo{
+    margin-top: 6px;
+    height: 60px;
+    width: 110px;
+}
+
+.size-logoSmall{
+    height: 40px;
+    width: 50px;
+}

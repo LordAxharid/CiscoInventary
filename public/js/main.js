@@ -98,3 +98,13 @@
     }); 	   
  
 })(jQuery); 
+
+
+
+window.onload = function(){
+
+	$('#onload').fadeOut(3500);
+
+	$('hidden-backload').removeClass('hidden', 3500);
+	
+}
