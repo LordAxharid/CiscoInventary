@@ -74,7 +74,13 @@
     <link rel="stylesheet" href="{{ asset('css/modals.css') }}">
 </head>
 
-<body>
+<!-- Pre loader -->
+<body class="hidden-backload">
+<div class="center-preloader" id="onload">
+<div><img src="{{ asset('img/preloader.gif') }}"></div>
+</div>
+
+
 
 @include('layouts.header')
 

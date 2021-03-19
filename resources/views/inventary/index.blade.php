@@ -4,7 +4,6 @@
  <!-- Static Table Start -->
  
 
-
  
 <div class="all-content-wrapper">
  <div class="data-table-area mg-b-15">
