@@ -28,6 +28,9 @@
 															<span class="admin-name" style="color: #009bdd;">Cristian orlando</span>
 															<i class="fas fa-cog fa-spin icon-color" ></i>
 														</a>
+                                                        <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="{{  url('Logout')}}"><span class="edu-icon edu-home-admin author-log-ic"></span>Logout</a>
+                                                        </li>
                              
                                                 </li>
                                             </ul>

@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< Updated upstream
+=======
+Route::get('/', 'LoginController@LoginIndex');
+Route::post('/LoginAuth', 'LoginController@LoginAuth');
+Route::get('/Logout', 'LoginController@Logout');
+
+>>>>>>> Stashed changes
 
 Route::get('/', 'DeveloperController@index');
 
