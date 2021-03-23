@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::match(['get', 'post'], '/', 'LoginController@login');
+Route::get('/', 'LoginController@LoginIndex');
+Route::post('/LoginAuth', 'LoginController@LoginAuth');
+Route::get('/Logout', 'LoginController@Logout');
+
 
 Route::get('/Developers', 'DeveloperController@index');
 

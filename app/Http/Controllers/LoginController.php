@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
-use App\Models\Login;
-use Auth;
+use App\Login;
 use Session;
-use App\User;
-use App\Admin;
 use Illuminate\Support\Facades\Hash;
+
+
 class LoginController extends Controller
 {
-    public function login(Request $request){
-    	if($request->isMethod('post')){
+
+    public function LoginIndex(){
+        return view('login.index');
+    }
+
+    public function LoginAuth(Request $request){
+    	
     		$data = $request->input();
             $adminCount = Login::where(['username' => $data['username'],'password'=>md5($data['password']),'status'=>1])->count();
             if($adminCount > 0){
@@ -21,9 +24,12 @@ class LoginController extends Controller
                 return redirect('/Developers');
         	}else{
                 //echo "failed"; die;
-                return redirect('/')->with('flash_message_error','Usuario O Clave Incorrectas');
+                return redirect('/')->with('flash_message_error','User Or Password Incorrect');
         	}
-    	}
-    	return view('login.index');
+    }
+
+    public function Logout(){
+        Session::flush();
+        return redirect('/')->with('flash_message_success', 'Logged out successfully');
     }
 }

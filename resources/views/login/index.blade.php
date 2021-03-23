@@ -6,10 +6,20 @@
 				<h3>Bienvenid@ A Cisco</h3>
 				<p>Sistema de inventario!</p>
 			</div>
+            @if(Session::has('flash_message_error'))
+            <div class="alert alert-danger alert-mg-b" role="alert">
+                                <strong>{!! session('flash_message_error') !!}</strong>
+                            </div>
+            @endif
+            @if(Session::has('flash_message_success'))
+            <div class="alert alert-success" role="alert">
+                                <strong>{!! session('flash_message_success') !!}</strong>
+                            </div>
+            @endif
 			<div class="content-error">
 				<div class="hpanel">
                     <div class="panel-body">
-                        <form method="POST" action="{{ url('/') }}" id="loginForm">{{ csrf_field() }}
+                        <form method="POST" action="{{ url('LoginAuth') }}" id="loginForm">@csrf
                             <div class="form-group">
                                 <label class="control-label" for="username">User Name</label>
                                 <input type="text" placeholder="User Name" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
@@ -29,9 +39,5 @@
                     </div>
                 </div>
 			</div>
-			<div class="text-center login-footer">
-				<p>Copyright © 2021. Cisco</p>
-			</div>
-		</div>   
-    </div>
-    @endcontent
+	
+    @endsection

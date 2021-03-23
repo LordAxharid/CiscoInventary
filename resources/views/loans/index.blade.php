@@ -320,7 +320,7 @@
                                     <div class="basic-login-inner modal-basic-inner">
                                        <h3>Sign In</h3>
                                        <p>Register User can get sign in from here</p>
-                                       <form action="#">
+                                       <form action="">
                                           <div class="form-group-inner">
                                              <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
