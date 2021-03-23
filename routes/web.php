@@ -10,11 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::match(['get', 'post'], '/', 'LoginController@login');
 
-Route::get('/', 'DeveloperController@index');
+Route::get('/Developers', 'DeveloperController@index');
 
 Route::get('/Inventary', 'InventaryController@index');
+
 Route::get('/Channels', 'ChannelsController@index');
+
 Route::get('/Loans', 'LoanController@index');
+
 Route::get('/Charts', 'ChartsController@index');
+
 Route::get('/Gallery', 'GalleryController@index');
