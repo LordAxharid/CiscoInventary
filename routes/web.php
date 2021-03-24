@@ -10,19 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Rutas Del Login
 Route::get('/', 'LoginController@LoginIndex');
 Route::post('/LoginAuth', 'LoginController@LoginAuth');
 Route::get('/Logout', 'LoginController@Logout');
 
-
+//Rutas Del Menu Desarrolladores
 Route::get('/Developers', 'DeveloperController@index');
 
+//Rutas Del Inventario
 Route::get('/Inventary', 'InventaryController@index');
 
+//Rutas De Los Canales
 Route::get('/Channels', 'ChannelsController@index');
 
+//Rutas De Prestamos
 Route::get('/Loans', 'LoanController@index');
 
+//Rutas De Graficos
 Route::get('/Charts', 'ChartsController@index');
 
+//Rutas De La Galeria
 Route::get('/Gallery', 'GalleryController@index');
