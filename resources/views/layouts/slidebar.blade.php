@@ -2,14 +2,14 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="{{url ('/') }}"><img class="main-logo size-logo" src="{{ asset('img/cisco.png')}}" alt="" /></a>
+                <a href="{{url ('/Developers') }}"><img class="main-logo size-logo" src="{{ asset('img/cisco.png')}}" alt="" /></a>
                 <strong><a href="index.html"><img class="size-logoSmall" src="{{ asset('img/CiscoSmall.png')}}" alt="" /></a></strong>
             </div><br>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                     <li class="active">
-                            <a title="Landing Page" href="{{ url('/') }}" aria-expanded="false"><i class="fas fa-user-tie icon-color" aria-hidden="true"></i> <span class="mini-click-non">Desarrolladores</span></a>
+                            <a title="Landing Page" href="{{ url('/Developers') }}" aria-expanded="false"><i class="fas fa-user-tie icon-color" aria-hidden="true"></i> <span class="mini-click-non">Desarrolladores</span></a>
                         </li>
 
                         <li>
