@@ -57,7 +57,7 @@
                                         <td>{{ $inventary->channel }}</td>
                                         <td>{{ $inventary->observation }}</td>
                                         <td>   
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                            <a class="fas fa-folder-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
                                             <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
                                             <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
                                             

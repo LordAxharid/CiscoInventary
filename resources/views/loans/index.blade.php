@@ -80,7 +80,7 @@
                                            <td>Seb 5, 2017</td>
                                            <td>$9875</td>
                                            <td>            
-                                               <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
+                                               <a class="far fa-handshake icon-color"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
                                                <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
                                                <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
                                           </td>
