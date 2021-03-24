@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Models\Inventary;
+use App\Inventary;
 
 class InventaryController extends Controller
 {
@@ -12,9 +12,9 @@ class InventaryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('inventary.index');
+    public function index(){
+        $inventary = Inventary::get();
+        return view('inventary.index')->with(compact('inventary'));
     }
 
     /**

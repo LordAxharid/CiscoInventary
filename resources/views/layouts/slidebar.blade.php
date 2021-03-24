@@ -9,7 +9,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                     <li class="active">
-                            <a title="Landing Page" href="{{ url('/Developers') }}" aria-expanded="false"><i class="fas fa-user-tie icon-color" aria-hidden="true"></i> <span class="mini-click-non">Desarrolladores</span></a>
+                            <a title="Landing Page" href="{{ url('/Developers') }}" aria-expanded="false"><i class="fas fa-user-tie icon-color" aria-hidden="true"></i> <span class="mini-click-non">Developers</span></a>
                         </li>
 
                         <li>
