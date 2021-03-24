@@ -15,10 +15,14 @@ Route::post('/LoginAuth', 'LoginController@LoginAuth');
 Route::get('/Logout', 'LoginController@Logout');
 
 
-Route::get('/Developer', 'DeveloperController@index');
+Route::get('/Developers', 'DeveloperController@index');
 
 Route::get('/Inventary', 'InventaryController@index');
+
 Route::get('/Channels', 'ChannelsController@index');
+
 Route::get('/Loans', 'LoanController@index');
+
 Route::get('/Charts', 'ChartsController@index');
+
 Route::get('/Gallery', 'GalleryController@index');
