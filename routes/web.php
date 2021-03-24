@@ -15,7 +15,7 @@ Route::post('/LoginAuth', 'LoginController@LoginAuth');
 Route::get('/Logout', 'LoginController@Logout');
 
 
-Route::get('/', 'DeveloperController@index');
+Route::get('/Developer', 'DeveloperController@index');
 
 Route::get('/Inventary', 'InventaryController@index');
 Route::get('/Channels', 'ChannelsController@index');
