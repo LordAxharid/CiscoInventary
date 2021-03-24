@@ -3,8 +3,6 @@
 @section('content')
  <!-- Static Table Start -->
  
-
- 
 <div class="all-content-wrapper">
  <div class="data-table-area mg-b-15">
     <div class="container-fluid">
@@ -32,258 +30,39 @@
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
-                                        <th data-field="name" data-editable="true">Task</th>
-                                        <th data-field="email" data-editable="true">Email</th>
-                                        <th data-field="phone" data-editable="true">Phone</th>
-                                        <th data-field="date" data-editable="true">Date</th>
-                                        <th data-field="price" data-editable="true">Price</th>
-                                        <th data-field="action" data-editable="false">Action</th>
+                                        <th data-field="name" data-editable="false">Section</th>
+                                        <th data-field="email" data-editable="false">Position</th>
+                                        <th data-field="phone" data-editable="false">State</th>
+                                        <th data-field="date" data-editable="false">Product</th>
+                                        <th data-field="price" data-editable="false">PdrPid</th>
+                                        <th data-field="serial" data-editable="false">Serial</th>
+                                        <th data-field="code" data-editable="false">Code</th>
+                                        <th data-field="channel" data-editable="false">Channel</th>
+                                        <th data-field="observations" data-editable="false">Observations</th>
+                                        <th data-field="actions" data-editable="false">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($inventary as $inventary)
                                     <tr>
                                         <td></td>
-                                        <td>1</td>
-                                        <td>Web Development</td>
-                                        <td>admin@uttara.com</td>
-                                        <td>+8801962067309</td>
-                                        <td>Jul 14, 2017</td>
-                                        <td>$5455</td>
+                                        <td>{{ $inventary->id }}</td>
+                                        <td>{{ $inventary->section }}</td>
+                                        <td>{{ $inventary-> position }}</td>
+                                        <td>{{ $inventary->state }}</td>
+                                        <td>{{ $inventary->product }}</td>
+                                        <td>{{ $inventary->pdrpid }}</td>
+                                        <td>{{ $inventary->serial }}</td>
+                                        <td>{{ $inventary->code }}</td>
+                                        <td>{{ $inventary->channel }}</td>
+                                        <td>{{ $inventary->observation }}</td>
                                         <td>   
                                             <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
                                             <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
                                             <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
                                             
-
                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>2</td>
-                                        <td>Graphic Design</td>
-                                        <td>fox@itpark.com</td>
-                                        <td>+8801762067304</td>
-                                        <td>fab 2, 2017</td>
-                                        <td>$8756</td>
-                                       <td>        
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                            
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>3</td>
-                                        <td>Software Development</td>
-                                        <td>gumre@hash.com</td>
-                                        <td>+8801862067308</td>
-                                        <td>Seb 5, 2017</td>
-                                        <td>$9875</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>4</td>
-                                        <td>Woocommerce</td>
-                                        <td>kyum@frok.com</td>
-                                        <td>+8801962066547</td>
-                                        <td>Oct 10, 2017</td>
-                                        <td>$3254</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>5</td>
-                                        <td>Joomla</td>
-                                        <td>jams@game.com</td>
-                                        <td>+8801962098745</td>
-                                        <td>Nov 20, 2017</td>
-                                        <td>$58745</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>6</td>
-                                        <td>Wordpress</td>
-                                        <td>flat@yem.com</td>
-                                        <td>+8801962254781</td>
-                                        <td>Aug 25, 2017</td>
-                                        <td>$789879</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>7</td>
-                                        <td>Ecommerce</td>
-                                        <td>hasan@wpm.com</td>
-                                        <td>+8801962254863</td>
-                                        <td>July 17, 2017</td>
-                                        <td>$21424</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>8</td>
-                                        <td>Android Apps</td>
-                                        <td>ATM@devep.com</td>
-                                        <td>+8801962875469</td>
-                                        <td>June 11, 2017</td>
-                                        <td>$78978</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>9</td>
-                                        <td>Prestashop</td>
-                                        <td>presta@Prest.com</td>
-                                        <td>+8801962067524</td>
-                                        <td>May 9, 2017</td>
-                                        <td>$45645</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>10</td>
-                                        <td>Game Development</td>
-                                        <td>Dev@game.com</td>
-                                        <td>+8801962067457</td>
-                                        <td>April 5, 2017</td>
-                                        <td>$4564545</td>
-                                        <td>            
-                                            <a class="fas fa-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>11</td>
-                                        <td>Angular Js</td>
-                                        <td>gular@angular.com</td>
-                                        <td>+8801962067124</td>
-                                        <td>Dec 1, 2017</td>
-                                        <td>$645455</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>12</td>
-                                        <td>Opencart</td>
-                                        <td>open@cart.com</td>
-                                        <td>+8801962067587</td>
-                                        <td>Jan 6, 2017</td>
-                                        <td>$78978</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>13</td>
-                                        <td>Education</td>
-                                        <td>john@example.com</td>
-                                        <td>+8801962067471</td>
-                                        <td>Feb 6, 2016</td>
-                                        <td>$456456</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>14</td>
-                                        <td>Construction</td>
-                                        <td>mary@example.com</td>
-                                        <td>+8801962012457</td>
-                                        <td>Jan 6, 2016</td>
-                                        <td>$87978</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>15</td>
-                                        <td>Real Estate</td>
-                                        <td>july@example.com</td>
-                                        <td>+8801962067309</td>
-                                        <td>Dec 1, 2016</td>
-                                        <td>$454554</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>16</td>
-                                        <td>Personal Regume</td>
-                                        <td>john@example.com</td>
-                                        <td>+8801962067306</td>
-                                        <td>May 9, 2016</td>
-                                        <td>$564555</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>17</td>
-                                        <td>Admin Template</td>
-                                        <td>mary@example.com</td>
-                                        <td>+8801962067305</td>
-                                        <td>June 11, 2016</td>
-                                        <td>$454565</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>18</td>
-                                        <td>FrontEnd</td>
-                                        <td>july@example.com</td>
-                                        <td>+8801962067304</td>
-                                        <td>May 9, 2015</td>
-                                        <td>$456546</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>19</td>
-                                        <td>Backend</td>
-                                        <td>john@range.com</td>
-                                        <td>+8801962067303</td>
-                                        <td>Feb 9, 2014</td>
-                                        <td>$564554</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>20</td>
-                                        <td>Java Advance</td>
-                                        <td>lamon@ghs.com</td>
-                                        <td>+8801962067302</td>
-                                        <td>July 6, 2014</td>
-                                        <td>$789889</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>21</td>
-                                        <td>Jquery Advance</td>
-                                        <td>hasad@uth.com</td>
-                                        <td>+8801962067301</td>
-                                        <td>Jun 6, 2013</td>
-                                        <td>$4565656</td>
-                                    </tr>
+                              @endforeach
                                 </tbody>
                             </table>
                         </div>
