@@ -15,11 +15,8 @@ Route::post('/LoginAuth', 'LoginController@LoginAuth');
 Route::get('/Logout', 'LoginController@Logout');
 
 
-<<<<<<< HEAD
-Route::get('/Developer', 'DeveloperController@index');
-=======
+
 Route::get('/Developers', 'DeveloperController@index');
->>>>>>> Medina
 
 Route::get('/Inventary', 'InventaryController@index');
 
