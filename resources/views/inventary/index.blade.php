@@ -1,4 +1,6 @@
 @extends('layouts.design')
+@extends('layouts.modals')
+
 
 @section('content')
  <!-- Static Table Start -->
@@ -18,6 +20,7 @@
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <br><div id="toolbar">
+                              <a class="fas fa-folder-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
                                 <select class="form-control dt-tb">
                                     <option value="">Export Basic</option>
                                     <option value="all">Export All</option>
@@ -48,7 +51,7 @@
                                         <td></td>
                                         <td>{{ $inventary->id }}</td>
                                         <td>{{ $inventary->section }}</td>
-                                        <td>{{ $inventary-> position }}</td>
+                                        <td>{{ $inventary->position }}</td>
                                         <td>{{ $inventary->state }}</td>
                                         <td>{{ $inventary->product }}</td>
                                         <td>{{ $inventary->pdrpid }}</td>
@@ -57,9 +60,9 @@
                                         <td>{{ $inventary->channel }}</td>
                                         <td>{{ $inventary->observation }}</td>
                                         <td>   
-                                            <a class="fas fa-folder-plus"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>   
-                                            <a class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert"></a>
-                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                               
+                                            <a  class="far fa-edit"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert1"></a>
+                                            <a class="far fa-trash-alt"  style="color: #009bdd;" href="#" data-toggle="modal" data-target="#PrimaryModalalert2"></a>
                                             
                                        </td>
                               @endforeach
@@ -74,194 +77,5 @@
 </div>
 
 <!-- modal -->
-
-<div class="sparkline11-graph">
-   <div class="basic-login-form-ad">
-      <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div id="zoomInDown1" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
-               <div class="modal-dialog">
-                  <div class="modal-content">
-                     <div class="modal-close-area modal-close-df">
-                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-                     </div>
-                     <div class="modal-body">
-                        <div class="modal-login-form-inner">
-                           <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                 <div class="login-social-inner">
-                                    <a href="#" class="button btn-social facebook span-left"> <span><i class="fa fa-facebook"></i></span> Facebook </a>
-                                    <a href="#" class="button btn-social twitter span-left"> <span><i class="fa fa-twitter"></i></span> Twitter </a>
-                                    <a href="#" class="button btn-social googleplus span-left"> <span><i class="fa fa-google-plus"></i></span> Google+ </a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                 <div class="basic-login-inner modal-basic-inner">
-                                    <h3>Sign In</h3>
-                                    <p>Register User can get sign in from here</p>
-                                    <form action="#">
-                                       <div class="form-group-inner">
-                                          <div class="row">
-                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                <label class="login2">Email</label>
-                                             </div>
-                                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                <input type="email" class="form-control" placeholder="Enter Email" />
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group-inner">
-                                          <div class="row">
-                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                <label class="login2">Password</label>
-                                             </div>
-                                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                <input type="password" class="form-control" placeholder="password" />
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="login-btn-inner">
-                                          <div class="row">
-                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
-                                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                <label>
-                                                <input type="checkbox" class="i-checks"> Remember me </label>
-                                             </div>
-                                          </div>
-                                          <div class="row">
-                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
-                                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                <div class="login-horizental">
-                                                   <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Sign In</button>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-
-<div id="PrimaryModalalert" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-close-area modal-close-df">
-                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-            </div>
-            <div class="modal-body">
-                <form action="#">
-                    <div class="form-group-inner">
-                       <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                             <label class="usr">Section</label>
-                          </div>
-                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                             <input type="text" class="form-control" placeholder="Enter Section" />
-                          </div>
-                       </div>
-                    </div>
-                    <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <label class="usr">Position</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                              <input type="password" class="form-control" placeholder="Position Ej:A1" />
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <label for="sel1">Select list:</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" id="sel1">
-                                <option>Enable</option>
-                                <option>Unable</option>
-                              </select>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <label class="usr">Product</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                              <input type="text" class="form-control" placeholder="Product" />
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <label class="usr">PDR/Id</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                              <input type="text" class="form-control" placeholder="Ej: CP-79.." />
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <label class="usr">Serial</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                              <input type="text" class="form-control" placeholder="Serial" />
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group-inner">
-                        <div class="row">
-                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                              <label class="comment">Observations</label>
-                           </div>
-                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
-                           </div>
-                        </div>
-                     </div>
-                 </form>
-            </div>
-
-            <div class="modal-footer">
-                <a data-dismiss="modal" href="#">Cancel</a>
-                <a href="#">Process</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="PrimaryModalalert1" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-close-area modal-close-df">
-                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-            </div>
-            <div class="modal-body">
-                <i class="far fa-trash-alt fa-5x"  style="color: #009bdd;"></i>
-                <h2>Are you sure?</h2>
-                <h3>What do you want to delete?</h3>
-            </div>
-            <div class="modal-footer">
-                <a data-dismiss="modal" href="#">Cancel</a>
-                <a href="#">Accept</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 @endsection

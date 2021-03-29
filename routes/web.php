@@ -19,8 +19,11 @@ Route::get('/Logout', 'LoginController@Logout');
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-Route::get('/Inventary', 'InventaryController@index');
+//Route::get('/Inventary', 'InventaryController@index');
+//Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
+Route::Resource('Inventary', 'InventaryController');
 
+//Route::post('/inventaryadd', 'InventaryController@store');
 //Rutas De Los Canales
 Route::get('/Channels', 'ChannelsController@index');
 

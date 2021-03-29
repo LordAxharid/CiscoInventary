@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Models\Loan;
+use App\Loan;
 
 class LoanController extends Controller
 {
@@ -14,8 +14,9 @@ class LoanController extends Controller
      */
     public function index()
     {
+        $loan = Loan::get();
+        return view('loans.index')->with(compact('loan'));
         
-        return view('loans.index');
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Models\Channel;
+use App\Channel;
 
 class ChannelsController extends Controller
 {
@@ -14,7 +14,9 @@ class ChannelsController extends Controller
      */
     public function index()
     {
-        return view('channels.index');
+        $channel = Channel::get();
+        return view('channels.index')->with(compact('channel'));
+        
     }
 
     /**

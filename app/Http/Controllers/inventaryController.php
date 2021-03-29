@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Inventary;
+use DataTables;
 
 class InventaryController extends Controller
 {
@@ -13,8 +14,7 @@ class InventaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $inventary = Inventary::get();
-        return view('inventary.index')->with(compact('inventary'));
+        
     }
 
     /**
@@ -34,8 +34,22 @@ class InventaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $inventary= new Inventary;
+
+        $inventary->section =$request->input('section');
+        $inventary->position =$request->input('position');
+        $inventary->state =$request->input('state');
+        $inventary->product =$request->input('product');
+        $inventary->pdrpid =$request->input('pdrpid');
+        $inventary->serial =$request->input('serial');
+        $inventary->code =$request->input('code');
+        $inventary->channel =$request->input('channel');
+        $inventary->observation =$request->input('observation');
+        
+        $students->save();
+
+  
     }
 
     /**
