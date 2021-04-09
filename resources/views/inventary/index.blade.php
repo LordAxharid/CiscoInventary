@@ -217,7 +217,7 @@
           success: function (data) {
      
               $('#bookForm').trigger("reset");
-              $('#ajaxModel').modal('show');
+              $('#ajaxModel').modal('hide');
               table.draw();
          
           },

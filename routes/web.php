@@ -21,9 +21,10 @@ Route::get('/Developers', 'DeveloperController@index');
 //Rutas Del Inventario
 //Route::get('/Inventary', 'InventaryController@index');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
-Route::Resource('/Inventary', 'InventaryController');
-Route::Post('/Inventaryadd', 'InventaryController@store');
-Route::get('Inventarydele_te/destroy/{id}', 'InventaryController@destroy');
+Route::Resource('/Inventary', 'inventaryController');
+//Route::Post('/Inventaryadd', 'InventaryController@store');
+
+//Route::get('Inventarydele_te/destroy/{id}', 'InventaryController@destroy');
 
 //Route::get('/Inventary', 'InventaryController@index');
 //Rutas De Los Canales
