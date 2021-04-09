@@ -1220,6 +1220,7 @@ ul.breadcome-menu li a:hover{
     border-radius: 2px;
     padding: 20px;
     position: relative;
+    opacity: 0.9;
 }
 .program-widget-bc .table.table-striped{
 	margin-bottom:0px;
@@ -4762,3 +4763,20 @@ div#sparklinehome canvas {
     height: 40px;
     width: 50px;
 }
+
+.imgFondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.logoLogin{
+    margin: 0 auto;
+    height: 17%;
+    width: 17%;
+}
+
+#txtLetra{
+    color: white;
+}
+
