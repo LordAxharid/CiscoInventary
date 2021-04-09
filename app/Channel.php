@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Channel extends Model
 {
+    public $timestamps = false;
     protected $table = 'channel';
     protected $fillable = [
-        'nchanel'
+        'nchannel'
     ];
 }
