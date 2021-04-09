@@ -28,7 +28,7 @@ Route::get('/Channels', 'ChannelsController@index');
 Route::get('/Loans', 'LoanController@index');
 
 //Rutas De Graficos
-Route::get('/Charts', 'ChartsController@index');
+Route::get('/Charts', 'ChartsController@ChartLoanChannels');
 
 //Rutas De La Galeria
 Route::get('/Gallery', 'GalleryController@index');
