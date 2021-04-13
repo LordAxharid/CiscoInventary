@@ -1,254 +1,600 @@
 @extends('layouts.design')
 
 @section('content')
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css')}}" />
-    <link href="{{ asset('https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-    
-</head>
-<body>
-    
- <!-- Static Table Start -->
- 
- <div class="all-content-wrapper">
-    <div class="data-table-area mg-b-15">
-       <div class="container-fluid">
-           
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                   <div class="sparkline13-list">
-                       <div class="sparkline13-hd">
-                          <div class="main-sparkline13-hd">
-                               <h1>Projects <span class="table-project-n">Data</span> Table</h1>
-                           </div>
-                       </div>
-                       
-                       <div class="sparkline13-graph">
-                           <div class="datatable-dashv1-list custom-datatable-overright">
-                               <br><div id="toolbar">
-                                 
+
+<div class="all-content-wrapper">
+
+<div class="data-table-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">  
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control dt-tb">
+											<option value="">Export Basic</option>
+											<option value="all">Export All</option>
+											<option value="selected">Export Selected</option>
+										</select>
+                                        <i class="fa fa-folder-plus iconColorBlue" style="font-size: 24px; float: right;" data-toggle="modal" data-target="#zoomInDownAddInventary"></i>
+                                    </div>
                                    
-                               </div>
-                               <table  data-toggle="table" data-pagination="true"  data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                               data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" class=" data-table">
-                               <a class="fas fa-folder-plus "  style="font-size:24px; color: #009bdd;" href="javascript:void(0)" id="createNewBook" data-toggle="modal" data-target="#ajaxModel"></a><thead>
-                                       <tr>
-                                           <th>ID</th>
-                                           <th>Section</th>
-                                           <th>Position</th>
-                                           <th>State</th>
-                                           <th>Product</th>
-                                           <th>PdrPid</th>
-                                           <th>Serial</th>
-                                           <th>Code</th>
-                                           <th>Channel</th>
-                                           <th>Observations</th>
-                                           <th>Actions</th>
-                                       </tr>
-                                   </thead>
-                                   <tbody>
-                                   </tbody>
-                               </table>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           
-       </div>
-   </div>
-<div class="modal fade" id="ajaxModel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modelHeading"></h4>
-            </div>
-            <div class="modal-close-area modal-close-df">
-                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-             </div>
-            <div class="modal-body">
-                <form id="bookForm" name="bookForm" class="form-horizontal">
-                   <input type="hidden" name="book_id" id="book_id">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Section</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="section" name="section" placeholder="Enter Title" value="" maxlength="50" required="">
+                                  
+                                  
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="plus">Lend</th>
+                                                <th data-field="name" data-editable="true">Section</th>
+                                                <th data-field="email" data-editable="true">Position</th>
+                                                <th data-field="phone" data-editable="true">State</th>
+                                                <th data-field="complete">Product</th>
+                                                <th data-field="task" data-editable="true">Pdr/pid</th>
+                                                <th data-field="date" data-editable="true">Serial</th>
+                                                <th data-field="price" data-editable="true">Code</th>
+                                                <th data-field="price" data-editable="true">Channel</th>
+                                                <th data-field="price" data-editable="true">Observation</th>
+                                                <th data-field="action">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($inventary as $inventary)
+                                            <tr>
+                                                <td></td>
+                                                <td><i class="far fa-handshake iconColorBlue" data-toggle="modal" data-target="#zoomInDownLoan"></i></td>
+                                                <td>{{ $inventary->section }}</td>
+                                                <td>{{ $inventary->position }}</td>
+                                                <td>{{ $inventary->state }}</td>
+                                                <td>{{ $inventary->product }}</td>
+                                                <td>{{ $inventary->pdrpid }}</td>
+                                                <td>{{ $inventary->serial }}</td>
+                                                <td>{{ $inventary->code }}</td>
+                                                <td>{{ $inventary->channel }}</td>
+                                                <td>{{ $inventary->observation }}</td>
+                                                <td><i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventary"> Edit</i><br>
+                                                    <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete"> Delete</i></strong>
+                                                </td>
+                                               
+                                                </td>
+                                            </tr>
+                                       @endforeach
+                                     
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Position</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="position" name="position" placeholder="Enter position" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">State</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Product</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="product" name="product" placeholder="Enter product" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Pdrpid</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="pdrpid" name="pdrpid" placeholder="Enter pdrpid" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Serial</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="serial" name="serial" placeholder="Enter Serial" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Code</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="code" name="code" placeholder="Enter code" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Channel</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="channel" name="channel" placeholder="Enter channel" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-     
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Observation</label>
-                        <div class="col-sm-12">
-                            <textarea id="observation" name="observation" required="" placeholder="Enter observation" class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                   
-      
-                    <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
-                     </button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+
+
+<!--  Modal Prestar Inventario -->
+
+        <div class="basic-form-area mg-b-15">
+            <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="sparkline11-list responsive-mg-b-30">
+                            <div class="sparkline11-hd">
+                                
+                            </div>
+                            <div class="sparkline11-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div id="zoomInDownLoan" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                         
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                            <h3>Lend Device</h3>
+                                                                          
+                                                                            <form action="#">
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Id Loan</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                        
+                                                                                        <div class="col-lg-5 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Devices Borrowed PID</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+
+                                                                                        <div class="col-lg-4 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Channel</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+																			                        <option>Cisco</option>
+																			                        <option>Claro</option>
+																			                        <option>Prueba1</option>
+																			                        <option>Prueba2</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+
+                                                                                    <label class="login2">Loan Date</label>
+                                                                                            <input type="date" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Estimate Return</label>
+                                                                                            <input type="date" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                </div>
+                                                                             
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                    <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Returned</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+																			                        <option>Yes</option>
+																			                        <option>No</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+                                                                        
+                                                                                        <div class="col-lg-4 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">State</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+																			                        <option>Available</option>
+																			                        <option>Taken</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-lg-5 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Serial</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+                                                                
+                                                                            <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Observation</label>
+                                                                                            <textarea type="text" class="form-control" placeholder=""></textarea>
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+
+                                                                                <div class="login-btn-inner">
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Changes</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+        </div>
+
+
+<!--  Modal Actualizar Inventario -->
+        <div class="basic-form-area mg-b-15">
+            <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="sparkline11-list responsive-mg-b-30">
+                            <div class="sparkline11-hd">
+                                
+                            </div>
+                            <div class="sparkline11-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div id="zoomInDownInventary" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                         
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                            <h3>UPDATE DEVICE</h3>
+                                                                            <form action="#">
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Section</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+                                                                                     <option value="SECCION A">SECCION A</option>
+                                                                                        <option value="SECCION B">SECCION B</option>
+                                                                                        <option value="SECCION C">SECCION C</option>
+                                                                                        <option value="SECCION D">SECCION D</option>
+                                                                                        <option value="SECCION E">SECCION E</option>
+                                                                                        <option value="SECCION F">SECCION F</option>
+                                                                                        <option value="SECCION G">SECCION G</option>
+                                                                                        <option value="SECCION H">SECCION H</option>
+                                                                                        <option value="SECCION I">SECCION I</option>
+                                                                                        <option value="SECCION J">SECCION J</option>
+                                                                                        <option value="SECCION K">SECCION K</option>
+                                                                                        <option value="SECCION L">SECCION L</option>
+                                                                                        <option value="SECCION M">SECCION M</option>
+                                                                                        <option value="SECCION N">SECCION N</option>
+                                                                                        <option value="SECCION O">SECCION I</option>
+                                                                                        <option value="SECCION P">SECCION P</option>
+                                                                                        <option value="SECCION Q">SECCION Q</option>
+                                                                                        <option value="SECCION R">SECCION R</option>
+                                                                                        <option value="SECCION S">SECCION S</option>
+                                                                                        <option value="SECCION T">SECCION T</option>
+                                                                                        <option value="SECCION U">SECCION U</option>
+                                                                                        <option value="SECCION V">SECCION V</option>
+                                                                                        <option value="SECCION W">SECCION W</option>
+                                                                                        <option value="SECCION X">SECCION X</option>
+                                                                                        <option value="SECCION Y">SECCION Y</option>
+                                                                                        <option value="SECCION Z">SECCION Z</option>
+                                                                                        <option value="RACK1">RACK1</option>
+                                                                                        <option value="RACK2">RACK2</option>
+                                                                                        <option value="RACK3">RACK3</option>
+                                                                                        <option value="RACK4">RACK4</option>
+                                                                                        <option value="RACK5">RACK5</option>
+                                                                                        <option value="RACK6">RACK6</option>
+                                                                                        <option value="RACK7">RACK7</option>
+                                                                                        <option value="RACK8">RACK8</option>
+                                                                                        <option value="RACK9">RACK9</option>
+                                                                                        <option value="RACK10">RACK10</option>
+                                                                                        <option value="RACK11">RACK11</option>
+                                                                                        <option value="RACK12">RACK12</option>
+                                                                                        <option value="RACK13">RACK13</option>
+                                                                                        <option value="RACK14">RACK14</option>
+                                                                                        <option value="RACK15">RACK15</option>
+                                                                                        <option value="RACK16">RACK16</option>
+                                                                                        <option value="RACK17">RACK17</option>
+                                                                                        <option value="RACK18">RACK18</option>
+                                                                                        <option value="RACK19">RACK19</option>
+                                                                                        <option value="RACK20">RACK20</option>
+                                                                                        <option value="RACK21">RACK21</option>
+                                                                                        <option value="RACK22">RACK22</option>
+                                                                                        <option value="RACK23">RACK23</option>
+                                                                                        <option value="RACK24">RACK24</option>
+                                                                                        <option value="RACKPRINCIPAL">RACKPRINCIPAL</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Position</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                        
+                                                                                        
+
+                                                                                        
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                   
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Product</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">PDR/PID</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                        
+                                                                                </div>
+                                                                             
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">                                                                                  
+                                                                                        <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Serial</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+                                                                
+                                                                            <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Observation</label>
+                                                                                            <textarea type="text" class="form-control" placeholder=""></textarea>
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+
+                                                                                <div class="login-btn-inner">
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Update</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+        </div>
+
+<!-- Modal Agregar Al Inventario -->
+
+<div class="basic-form-area mg-b-15">
+            <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="sparkline11-list responsive-mg-b-30">
+                            <div class="sparkline11-hd">
+                                
+                            </div>
+                            <div class="sparkline11-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div id="zoomInDownAddInventary" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                         
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                            <h3>UPDATE DEVICE</h3>
+                                                                            <form action="#">
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Section</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+                                                                                     <option value="SECCION A">SECCION A</option>
+                                                                                        <option value="SECCION B">SECCION B</option>
+                                                                                        <option value="SECCION C">SECCION C</option>
+                                                                                        <option value="SECCION D">SECCION D</option>
+                                                                                        <option value="SECCION E">SECCION E</option>
+                                                                                        <option value="SECCION F">SECCION F</option>
+                                                                                        <option value="SECCION G">SECCION G</option>
+                                                                                        <option value="SECCION H">SECCION H</option>
+                                                                                        <option value="SECCION I">SECCION I</option>
+                                                                                        <option value="SECCION J">SECCION J</option>
+                                                                                        <option value="SECCION K">SECCION K</option>
+                                                                                        <option value="SECCION L">SECCION L</option>
+                                                                                        <option value="SECCION M">SECCION M</option>
+                                                                                        <option value="SECCION N">SECCION N</option>
+                                                                                        <option value="SECCION O">SECCION I</option>
+                                                                                        <option value="SECCION P">SECCION P</option>
+                                                                                        <option value="SECCION Q">SECCION Q</option>
+                                                                                        <option value="SECCION R">SECCION R</option>
+                                                                                        <option value="SECCION S">SECCION S</option>
+                                                                                        <option value="SECCION T">SECCION T</option>
+                                                                                        <option value="SECCION U">SECCION U</option>
+                                                                                        <option value="SECCION V">SECCION V</option>
+                                                                                        <option value="SECCION W">SECCION W</option>
+                                                                                        <option value="SECCION X">SECCION X</option>
+                                                                                        <option value="SECCION Y">SECCION Y</option>
+                                                                                        <option value="SECCION Z">SECCION Z</option>
+                                                                                        <option value="RACK1">RACK1</option>
+                                                                                        <option value="RACK2">RACK2</option>
+                                                                                        <option value="RACK3">RACK3</option>
+                                                                                        <option value="RACK4">RACK4</option>
+                                                                                        <option value="RACK5">RACK5</option>
+                                                                                        <option value="RACK6">RACK6</option>
+                                                                                        <option value="RACK7">RACK7</option>
+                                                                                        <option value="RACK8">RACK8</option>
+                                                                                        <option value="RACK9">RACK9</option>
+                                                                                        <option value="RACK10">RACK10</option>
+                                                                                        <option value="RACK11">RACK11</option>
+                                                                                        <option value="RACK12">RACK12</option>
+                                                                                        <option value="RACK13">RACK13</option>
+                                                                                        <option value="RACK14">RACK14</option>
+                                                                                        <option value="RACK15">RACK15</option>
+                                                                                        <option value="RACK16">RACK16</option>
+                                                                                        <option value="RACK17">RACK17</option>
+                                                                                        <option value="RACK18">RACK18</option>
+                                                                                        <option value="RACK19">RACK19</option>
+                                                                                        <option value="RACK20">RACK20</option>
+                                                                                        <option value="RACK21">RACK21</option>
+                                                                                        <option value="RACK22">RACK22</option>
+                                                                                        <option value="RACK23">RACK23</option>
+                                                                                        <option value="RACK24">RACK24</option>
+                                                                                        <option value="RACKPRINCIPAL">RACKPRINCIPAL</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Position</label>
+                                                                                            <input type="text" class="form-control" placeholder="Ej: A1" />
+                                                                                        </div>
+                                                                        
+
+                                                                        
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                   
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">State</label>
+                                                                                        <div class="form-select-list">
+                                                                                     <select class="form-control custom-select-value" name="channel">
+																			                        <option>Available</option>
+																			                        <option>Taken</option>
+																		                        </select>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Product</label>
+                                                                                            <input type="text" class="form-control" placeholder="Ej: Modem" />
+                                                                                        </div>
+                                                                                       
+                                                                                        
+                                                                                </div>
+                                                                             
+                                                                                <div class="form-group-inner">
+                                                                                    <div class="row">  
+                                                                                    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">PDR/PID</label>
+                                                                                            <input type="text" class="form-control" placeholder="Ej: CP-7960G" />
+                                                                                        </div>                                                                                
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Serial</label>
+                                                                                            <input type="text" class="form-control" placeholder="" />
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+                                                                
+                                                                            <div class="form-group-inner">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <label class="login2">Observation</label>
+                                                                                            <textarea type="text" class="form-control" placeholder=""></textarea>
+                                                                                        </div>
+                                                                                    </div>                                                                                   
+                                                                                </div>
+                                                                                </div>                                                                                   
+                                                                            </div>
+
+                                                                                <div class="login-btn-inner">
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Update</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+        </div>
+
+        <!-- Modal Eliminar Inventario -->
+
+        <div class="login-form-area edu-pd mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                        <div id="DangerModalDelete" class="modal modal-edu-general FullColor-popup-DangerModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-4">
+                                        <h4 class="modal-title">Delete item from the inventary?</h4>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="far fa-trash-alt fa-5x "></span>
+                                        <h2>Danger!</h2>
+                                        <p>Are you sure you want to delete the element</p>
+                                    </div>
+                                    <div class="modal-footer danger-md">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+
+
 </div>
 
 
-    <script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js')}}"></script>  
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js')}}"></script>
-    <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js')}}"></script>  
-    <script src = "{{ asset('http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js')}}" defer ></script>   
-
-   
-<script type="text/javascript">
-  $(function () {
-      $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-    });
-    var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('Inventary.index') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'section', name: 'section'},
-            {data: 'position', name: 'position'},
-            {data: 'state', name: 'state'},
-            {data: 'product', name: 'product'},
-            {data: 'pdrpid', name: 'pdrpid'},
-            {data: 'serial', name: 'serial'},
-            {data: 'code', name: 'code'},
-            {data: 'channel', name: 'channel'},
-            {data: 'observation', name: 'observation'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
-    $('#createNewBook').click(function () {
-        $('#saveBtn').val("create-book");
-        $('#book_id').val('');
-        $('#bookForm').trigger("reset");
-        $('#modelHeading').html("Create New Book");
-        $('#ajaxModel').modal('show');
-    });
-    $('body').on('click', '.editbtn', function () {
-      var book_id = $(this).data('id');
-      $.get("{{ route('Inventary.index') }}" +'/' + book_id +'/edit', function (data) {
-          $('#modelHeading').html("Edit Book");
-          $('#saveBtn').val("edit-book");
-          $('#ajaxModel').modal('show');
-          $('#book_id').val(data.id);
-          $('#section').val(data.section);
-          $('#position').val(data.position);
-          $('#state').val(data.state);
-          $('#product').val(data.product);
-          $('#pdrpid').val(data.pdrpid);
-          $('#serial').val(data.serial);
-          $('#code').val(data.code);
-          $('#channel').val(data.channel);
-          $('#observation').val(data.observation);
-      })
-   });
-    $('#saveBtn').click(function (e) {
-        e.preventDefault();
-        $(this).html('Save');
-    
-        $.ajax({
-          data: $('#bookForm').serialize(),
-          url: "{{ route('Inventary.store') }}",
-          type: "POST",
-          dataType: 'json',
-          success: function (data) {
-     
-              $('#bookForm').trigger("reset");
-              $('#ajaxModel').modal('hide');
-              table.draw();
-         
-          },
-          error: function (data) {
-              console.log('Error:', data);
-              $('#saveBtn').html('Save Changes');
-          }
-      });
-    });
-    
-    $('body').on('click', '.deletebtn', function () {
-     
-        var book_id = $(this).data("id");
-        
-      
-        $.ajax({
-            type: "DELETE",
-            url: "{{ route('Inventary.store') }}"+'/'+book_id,
-            success: function (data) {
-                table.draw();
-            },
-            error: function (data) {
-                console.log('Error:', data);
-            }
-        });
-    });
-     
-  });
-</script>
 
 
-</body>
-</html>
+
 @endsection

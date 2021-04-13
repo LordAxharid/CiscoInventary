@@ -78,7 +78,7 @@
 </head>
 
 <!-- Pre loader -->
-<body class="hidden-backload">
+<body >
 <div class="center-preloader" id="onload">
 <div><img src="{{ asset('img/preloader.gif') }}"></div>
 </div>

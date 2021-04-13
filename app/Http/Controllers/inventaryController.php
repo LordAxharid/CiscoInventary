@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Inventary;
-use DataTables;
+use DB;
 
 class InventaryController extends Controller
 {
@@ -13,28 +13,11 @@ class InventaryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request){
-       // $inventary = Inventary::all();
-        //return view('inventary.index')->with(compact('inventary'));
-        $inventary = Inventary::first()->get();
+    public function index(){
         
-        if ($request->ajax()) {
-            $data = Inventary::first()->get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-   
-                           $btn = '<a ref="javascript:void(0)" data-toggle="modal" data-target="#ajaxModel"  data-id="'.$row->id.'" data-original-title="Edit" class="far fa-edit editbtn"  style="color: #009bdd;">Edit</a>';
-   
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="far fa-trash-alt deletebtn"  style="color: #009bdd;">Delete</a>';
-    
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
-      
-        return view('Inventary.index')->with(compact('inventary'));
+        $inventary = DB::table('Inventary')->get();
+
+        return view('inventary.index', ['inventary' => $inventary]);
     }
 
     /**

@@ -15,13 +15,15 @@ Route::get('/', 'LoginController@LoginIndex');
 Route::post('/LoginAuth', 'LoginController@LoginAuth');
 Route::get('/Logout', 'LoginController@Logout');
 
+
+
 //Rutas Del Menu Desarrolladores
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-//Route::get('/Inventary', 'InventaryController@index');
+Route::get('/Inventary', 'inventaryController@index');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
-Route::Resource('/Inventary', 'inventaryController');
+
 //Route::Post('/Inventaryadd', 'InventaryController@store');
 
 //Route::get('Inventarydele_te/destroy/{id}', 'InventaryController@destroy');
@@ -38,3 +40,5 @@ Route::get('/Charts', 'ChartsController@ChartLoanChannels');
 
 //Rutas De La Galeria
 Route::get('/Gallery', 'GalleryController@index');
+
+
