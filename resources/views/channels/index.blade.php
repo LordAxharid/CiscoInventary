@@ -1,172 +1,239 @@
 @extends('layouts.design')
 
 @section('content')
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css')}}" />
-    <link href="{{ asset('https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-    
-</head>
-<body>
-    
- <!-- Static Table Start -->
- 
- <div class="all-content-wrapper">
-    <div class="data-table-area mg-b-15">
-       <div class="container-fluid">
-           
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                   <div class="sparkline13-list">
-                       <div class="sparkline13-hd">
-                          <div class="main-sparkline13-hd">
-                               <h1>Projects <span class="table-project-n">Data</span> Table</h1>
-                           </div>
-                       </div>
-                       
-                       <div class="sparkline13-graph">
-                               
-                           <div class="datatable-dashv1-list custom-datatable-overright">
-                               <br><div id="toolbar">
-                                 
+
+<div class="all-content-wrapper">
+
+<div class="data-table-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">  
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                                </div>
+                            </div>
+                            
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+   
+                                        <i class="fa fa-folder-plus iconColorBlue" style="font-size: 24px; float: right;" data-toggle="modal" data-target="#zoomInDownAddInventary"> Add New Channel</i>
+                                        
+                                    </div>
                                    
-                               </div>
-                               <table  data-toggle="table" data-pagination="true"  data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                               data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" class=" data-table">
-                               <a class="fas fa-folder-plus "  style="font-size:24px; color: #009bdd;" href="javascript:void(0)" id="createNewChannel" data-toggle="modal" data-target="#ajaxModel"></a><thead>
-                                       <tr>
-                                           <th>ID</th>
-                                           <th>nchannel</th>
-                                           <th>Actions</th>
-                                       </tr>
-                                   </thead>
-                                   <tbody>
-                                   </tbody>
-                               </table>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           
-       </div>
-   </div>
-<div class="modal fade" id="ajaxModel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modelHeading"></h4>
-            </div>
-            <div class="modal-close-area modal-close-df">
-                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-             </div>
-            <div class="modal-body">
-                <form id="channelForm" name="channelForm" class="form-horizontal">
-                   <input type="hidden" name="channel_id" id="channel_id">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">NameChannel</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="nchannel" name="nchannel" placeholder="Enter name channel" value="" maxlength="50" required="">
+                                  
+                                  
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="id">ID</th>
+                                                <th data-field="section" data-editable="true">Section</th>
+                                                <th data-field="action">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($channel as $channel)
+                                            <tr>
+                                              
+                                                
+                                                <td>{{ $channel->id }}</td>
+                                                <td>{{ $channel->nchannel }}</td>
+                                                <td><i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventary"> Edit</i><br>
+                                                    <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete"> Delete</i></strong>
+                                                </td>
+                                               
+                                                </td>
+                                            </tr>
+                                       @endforeach
+                                     
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
-                     </button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+
+
+<!--  Modal Actualizar Inventario -->
+<div class="basic-form-area mg-b-15">
+        <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="sparkline11-list responsive-mg-b-30">
+                            <div class="sparkline11-hd">
+                                
+                            </div>
+                            <div class="sparkline11-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div id="zoomInDownInventary" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                         
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                            <h3>EDIT CHANNEL</h3>
+                                                                            <form action="" method="POST">
+                                                                                        <div class="form-group-inner">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                                <label class="login2">Name Of The Channel</label>
+                                                                                                    <input type="text" name="position" class="form-control" placeholder="" />
+                                                                                                </div>
+                                                                                            </div>
+                    
+                                                                                        </div>
+                                                                                      
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="login-btn-inner">
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <button class="btn btn-sm btn-primary login-submit-cs" style="float: left;" type="submit">Update Channel</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+        
+
+<!-- Modal Agregar A Channel -->
+
+<div class="basic-form-area mg-b-15">
+        <div class="container-fluid">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="sparkline11-list responsive-mg-b-30">
+                            <div class="sparkline11-hd">
+                                
+                            </div>
+                            <div class="sparkline11-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div id="zoomInDownAddInventary" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                         
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                            <h3>ADD NEW CHANNEL</h3>
+                                                                            <form action="" method="POST">
+                                                                                        <div class="form-group-inner">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                                                                <label class="login2">Name Of The Channel</label>
+                                                                                                    <input type="text" name="position" class="form-control" placeholder="" />
+                                                                                                </div>
+                                                                                            </div>
+                    
+                                                                                        </div>
+                                                                                      
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="login-btn-inner">
+                                                                                    
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <button class="btn btn-sm btn-primary login-submit-cs" style="float: left;" type="submit">Add Channel</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+        
+
+        <!-- Modal Eliminar Inventario -->
+
+        <div class="login-form-area edu-pd mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                        <div id="DangerModalDelete" class="modal modal-edu-general FullColor-popup-DangerModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-4">
+                                        <h4 class="modal-title">Delete item from the inventary?</h4>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="far fa-trash-alt fa-5x "></span>
+                                        <h2>Danger!</h2>
+                                        <p>Are you sure you want to delete the element</p>
+                                    </div>
+                                    <div class="modal-footer danger-md">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+
+
 </div>
 
 
-    <script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js')}}"></script>  
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js')}}"></script>
-    <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js')}}"></script>  
-    <script src = "{{ asset('http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js')}}" defer ></script>   
-
-   
-<script type="text/javascript">
-  $(function () {
-      $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-    });
-    var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('Channels.index') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'nchannel', name: 'nchannel'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
-    $('#createNewChannel').click(function () {
-        $('#saveBtn').val("create-book");
-        $('#channel_id').val('');
-        $('#channelForm').trigger("reset");
-        $('#modelHeading').html("Create New Book");
-        $('#ajaxModel').modal('show');
-    });
-    $('body').on('click', '.editbtn', function () {
-      var channel_id = $(this).data('id');
-      $.get("{{ route('Channels.index') }}" +'/' + channel_id +'/edit', function (data) {
-          $('#modelHeading').html("Edit Channel");
-          $('#saveBtn').val("edit-book");
-          $('#ajaxModel').modal('show');
-          $('#channel_id').val(data.id);
-          $('#nchannel').val(data.nchannel);
-      })
-   });
-    $('#saveBtn').click(function (e) {
-        e.preventDefault();
-        $(this).html('Save');
-    
-        $.ajax({
-          data: $('#channelForm').serialize(),
-          url: "{{ route('Channels.store') }}",
-          type: "POST",
-          dataType: 'json',
-          success: function (data) {
-     
-              $('#channelForm').trigger("reset");
-              $('#ajaxModel').modal('show');
-              table.draw();
-         
-          },
-          error: function (data) {
-              console.log('Error:', data);
-              $('#saveBtn').html('Save Changes');
-          }
-      });
-    });
-    
-    $('body').on('click', '.deletebtn', function () {
-     
-        var channel_id = $(this).data("id");
-        
-      
-        $.ajax({
-            type: "DELETE",
-            url: "{{ route('Channels.store') }}"+'/'+channel_id,
-            success: function (data) {
-                table.draw();
-            },
-            error: function (data) {
-                console.log('Error:', data);
-            }
-        });
-    });
-     
-  });
-</script>
 
 
-</body>
-</html>
+
 @endsection

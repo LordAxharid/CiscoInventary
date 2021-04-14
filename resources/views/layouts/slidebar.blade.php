@@ -13,7 +13,7 @@
                         </li>
 
                         <li>
-                            <a class="" href="{{ url('/Inventary') }}">
+                            <a class="" href="{{ url('/inventory') }}">
                                 <i class="fas fa-boxes icon-color"></i>
 								   <span  class="mini-click-non">Inventary</span>
 								</a>

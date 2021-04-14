@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Inventary extends Model
+class Inventory extends Model
 {
     public $timestamps = false;
     protected $table = 'inventory';

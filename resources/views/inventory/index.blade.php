@@ -19,11 +19,7 @@
                                 <div class="datatable-dashv1-list custom-datatable-overright">
                                     <div id="toolbar">
                                         <i class="fa fa-folder-plus iconColorBlue" style="font-size: 24px; float: right;" data-toggle="modal" data-target="#zoomInDownAddInventary"></i>
-                                        <select class="form-control dt-tb">
-											<option value="">Export Basic</option>
-											<option value="all">Export All</option>
-											<option value="selected">Export Selected</option>
-										</select>
+                                        
                                     </div>
                                    
                                   
@@ -243,7 +239,7 @@
                                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                         <div class="basic-login-inner modal-basic-inner">
                                                                             <h3>UPDATE DEVICE</h3>
-                                                                            <form action="{{ url('Inventary/'.$inventory->id) }}" method="POST" id="">
+                                                                            <form action="{{ url('inventory/'.$inventory->id) }}" method="POST" id="">
 
                                                                                         {{ csrf_field() }}
                                                                                         {{ method_field('PUT') }}
@@ -434,7 +430,7 @@
                                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                         <div class="basic-login-inner modal-basic-inner">
                                                                             <h3>Insert Data Device</h3>
-                                                                            <form action="{{ route('Inventory.store') }}" method="POST">
+                                                                            <form action="{{ route('inventory.store') }}" method="POST">
 
                                                                                         {{ csrf_field() }}
                                                                                         <div class="form-group-inner">
