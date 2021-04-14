@@ -21,11 +21,7 @@ Route::get('/Logout', 'LoginController@Logout');
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-<<<<<<< Updated upstream
-//Route::get('/inventory', 'inventoryController@index');
-=======
 //Route::get('/Inventory', 'inventoryController@index');
->>>>>>> Stashed changes
 Route::resource('/inventory', 'inventoryController');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
 
