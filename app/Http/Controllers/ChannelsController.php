@@ -15,17 +15,12 @@ class ChannelsController extends Controller
      */
     public function index(Request $request)
     {
-        $channels = Channel::select(
-            'channels.id',
-            'channels.channel as channel'
+        /*$channel = Channel::get();
+        return view('channels.index')->with(compact('channel'));*/
 
-        )
-        ->get();
-        return view('channels.index')->with(compact('channel'));
-
-        /* $channels = Channel::first()->get();
+        $channel = Channel::first()->get();
         
-       if ($request->ajax()) {
+        if ($request->ajax()) {
             $data = Channel::first()->get();
             return Datatables::of($data)
                     ->addIndexColumn()
@@ -41,7 +36,7 @@ class ChannelsController extends Controller
                     ->make(true);
         }
       
-        return view('Channels.index')->with(compact('channel'));*/
+        return view('Channels.index')->with(compact('channel'));
         
     }
 
