@@ -21,8 +21,8 @@ Route::get('/Logout', 'LoginController@Logout');
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-//Route::get('/Inventary', 'inventaryController@index');
-Route::resource('/Inventary', 'inventaryController');
+Route::get('/Inventory', 'inventoryController@index');
+Route::resource('/Inventory', 'inventoryController');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
 
 //Route::Post('/Inventaryadd', 'InventaryController@store');
