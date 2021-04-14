@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventary extends Model
 {
-
-    protected $table = 'inventary';
+    public $timestamps = false;
+    protected $table = 'inventory';
     protected $fillable = [
         'section', 'position', 'state', 'product', 'pdrpid', 'serial', 'code', 'channel', 'observation'
     ];

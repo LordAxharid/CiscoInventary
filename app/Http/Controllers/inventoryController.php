@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
-use App\Inventary;
+use App\Inventory;
 use DB;
 
-class InventaryController extends Controller
+
+class InventoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,12 @@ class InventaryController extends Controller
      */
     public function index(){
         
-        $inventary = DB::table('Inventary')->get();
+        $inventory = DB::table('inventory')
+            ->join('channel', 'inventory.channel', '=', 'channel.id')
+            ->select('inventory.*', 'channel.nchannel')
+            ->get();
 
-        return view('inventary.index', ['inventary' => $inventary]);
+        return view('inventory.index')->with(compact('inventory'));
     }
 
     /**
@@ -37,26 +41,34 @@ class InventaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {  /* 
-        $inventary= new Inventary;
+    {  
+        $this->validate($request, [
+            'section' => 'required',
+            'position' => 'required',
+            'state' => 'required',
+            'product' => 'required',
+            'pdrpid' => 'required',
+            'serial' => 'required',
+            'code' => 'required',
+            'channel' => 'required',
+            'observation' => 'required',
+        ]);
 
-        $inventary->section =$request->input('section');
-        $inventary->position =$request->input('position');
-        $inventary->state =$request->input('state');
-        $inventary->product =$request->input('product');
-        $inventary->pdrpid =$request->input('pdrpid');
-        $inventary->serial =$request->input('serial');
-        $inventary->code =$request->input('code');
-        $inventary->channel =$request->input('channel');
-        $inventary->observation =$request->input('observation');
+        $inventory= new Inventory;
+
+        $inventory->section =$request->input('section');
+        $inventory->position =$request->input('position');
+        $inventory->state =$request->input('state');
+        $inventory->product =$request->input('product');
+        $inventory->pdrpid =$request->input('pdrpid');
+        $inventory->serial =$request->input('serial');
+        $inventory->code =$request->input('code');
+        $inventory->channel =$request->input('channel');
+        $inventory->observation =$request->input('observation');
         
-        $inventary->save(); */
-        Inventary::updateOrCreate(['id' => $request->book_id],
-                ['section' => $request->section, 'position' => $request->position, 'state' => $request->state, 'product' => $request->product, 'pdrpid' => $request->pdrpid, 'serial' => $request->serial, 'code' => $request->code, 'channel' => $request->channel, 'observation' => $request->observation]);
+        $inventory->save(); 
 
-        return response()->json(['success' => 'Inventario Registrado correctamente']);
-
-  
+        return redirect('/Inventory')->with('success','Data saved');
     }
 
     /**
@@ -78,8 +90,9 @@ class InventaryController extends Controller
      */
     public function edit($id)
     {
-        $inventary = Inventary::find($id);
-        return response()->json($inventary);
+        $inventory = Inventory::find($id);
+        return redirect('/Inventory')->with('success','Data saved');
+
     }
 
     /**
@@ -114,8 +127,8 @@ class InventaryController extends Controller
      */
     public function destroy($id)
     {
-        $inventary = Inventary::findOrFail($id);
-        $inventary->delete();
+        $inventory = Inventory::findOrFail($id);
+        $inventory->delete();
      
         return response()->json(['success'=>'Inventary deleted successfully.']);
     }
