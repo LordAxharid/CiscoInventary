@@ -68,7 +68,7 @@ class InventoryController extends Controller
         
         $inventory->save(); 
 
-        return redirect('/Inventory')->with('success','Data saved');
+        return redirect('/inventory')->with('success','Data saved');
     }
 
     /**
@@ -91,7 +91,7 @@ class InventoryController extends Controller
     public function edit($id)
     {
         $inventory = Inventory::find($id);
-        return redirect('/Inventory')->with('success','Data saved');
+        return redirect('/inventory')->with('success','Data saved');
 
     }
 
