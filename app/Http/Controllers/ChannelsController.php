@@ -15,10 +15,10 @@ class ChannelsController extends Controller
      */
     public function index(Request $request)
     {
-        /*$channel = Channel::get();
-        return view('channels.index')->with(compact('channel'));*/
+        $channel = Channel::get();
+        return view('channels.index')->with(compact('channel'));
 
-        $channel = Channel::first()->get();
+       /* $channel = Channel::first()->get();
         
         if ($request->ajax()) {
             $data = Channel::first()->get();
@@ -36,7 +36,7 @@ class ChannelsController extends Controller
                     ->make(true);
         }
       
-        return view('Channels.index')->with(compact('channel'));
+        return view('Channels.index')->with(compact('channel'));*/
         
     }
 

@@ -551,7 +551,12 @@
                                                                                                     </div>                                                                                
                                                                                                     <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
                                                                                                         <label class="login2">Channel</label>
-                                                                                                            <input type="text" class="form-control" name="channel" placeholder="" />
+                                                                                                            <select name="channel" class="form-control">
+                                                                                                                @foreach ( $channel as $channel )
+                                                                                                                    <option value="{{$channel->id}}"> {{$channel->nchannel}} </option>
+                                                                                                                @endforeach
+
+                                                                                                            </select>
                                                                                                     </div>
                                                                                                 </div>                                                                                   
                                                                                             </div>
