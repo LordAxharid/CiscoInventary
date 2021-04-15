@@ -42,7 +42,7 @@
 /*----------------------------------------*/
 /*  1. Common
 /*----------------------------------------*/
-html, body {height: 100%; font-family: 'Roboto', sans-serif;font-weight:400;background:#F6F8FA;}
+html, body {height: 100%; font-family: 'Roboto', sans-serif;font-weight:400;background:#ECECEC;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -4781,6 +4781,22 @@ div#sparklinehome canvas {
 }
 
 .iconColorBlue{
-
     color: #337ab7;
 }
+
+.containerTables{
+    width: 97%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerDevelopers{
+    width: 97%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.margin-img{
+    margin-top: 15px;
+}
+

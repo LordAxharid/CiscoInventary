@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+
 use App\Inventory;
 use DB;
 
@@ -15,13 +16,15 @@ class InventoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+
+        $Channels = DB::table('Channel')->get();
         
         $inventory = DB::table('inventory')
             ->join('channel', 'inventory.channel', '=', 'channel.id')
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory'));
+        return view('inventory.index')->with(compact('inventory','Channels'));
     }
 
     /**
@@ -31,7 +34,7 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -42,33 +45,8 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {  
-        $this->validate($request, [
-            'section' => 'required',
-            'position' => 'required',
-            'state' => 'required',
-            'product' => 'required',
-            'pdrpid' => 'required',
-            'serial' => 'required',
-            'code' => 'required',
-            'channel' => 'required',
-            'observation' => 'required',
-        ]);
 
-        $inventory= new Inventory;
-
-        $inventory->section =$request->input('section');
-        $inventory->position =$request->input('position');
-        $inventory->state =$request->input('state');
-        $inventory->product =$request->input('product');
-        $inventory->pdrpid =$request->input('pdrpid');
-        $inventory->serial =$request->input('serial');
-        $inventory->code =$request->input('code');
-        $inventory->channel =$request->input('channel');
-        $inventory->observation =$request->input('observation');
-        
-        $inventory->save(); 
-
-        return redirect('/Inventory')->with('success','Data saved');
+       
     }
 
     /**

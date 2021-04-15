@@ -15,26 +15,28 @@
                         <li>
                             <a class="" href="{{ url('/inventory') }}">
                                 <i class="fas fa-boxes icon-color"></i>
-								   <span  class="mini-click-non">Inventary</span>
+								   <span  class="mini-click-non">Inventory</span>
 								</a>
                            
                         </li>
-                       
+
                         <li>
-                            <a class="" href="{{ url('/Channels') }}" aria-expanded="false"><span class="fas fa-network-wired icon-color"></span> <span class="mini-click-non">canales</span></a>
-                          
-                        </li>
-                        <li>
-                            <a class="" href="{{ url('/Loans') }}" aria-expanded="false"><span class="far fa-handshake icon-color"></span> <span class="mini-click-non">Prestamos</span></a>
+                            <a class="" href="{{ url('/loans') }}" aria-expanded="false"><span class="far fa-handshake icon-color"></span> <span class="mini-click-non">Loans</span></a>
                             
                         </li>
+                       
                         <li>
-                            <a class="" href="{{ url('/Gallery') }}" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galeria</span></a>
+                            <a class="" href="{{ url('/Channels') }}" aria-expanded="false"><span class="fas fa-network-wired icon-color"></span> <span class="mini-click-non">Channels</span></a>
+                          
+                        </li>
+                     
+                        <li>
+                            <a class="" href="{{ url('/Gallery') }}" aria-expanded="false"><span class="far fa-image icon-color"></span> <span class="mini-click-non">Galery</span></a>
                         
                         </li>
                         
                         <li>
-                            <a class="" href="{{ url('/Charts') }}" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graficos</span></a>
+                            <a class="" href="{{ url('/Charts') }}" aria-expanded="false"><span class="far fa-chart-bar icon-color"></span> <span class="mini-click-non">Graphics</span></a>
                     
                         </li>
                         
