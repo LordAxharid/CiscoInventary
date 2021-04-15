@@ -34,7 +34,8 @@ Route::resource('/Inventory', 'inventoryController');
 Route::Resource('/Channels', 'ChannelsController');
 
 //Rutas De Prestamos
-Route::Resource('/Loans', 'LoanController');
+Route::get('/loans', 'LoanController@index');
+Route::resource('/loans', 'LoanController');
 
 //Rutas De Graficos
 Route::get('/Charts', 'ChartsController@ChartLoanChannels');

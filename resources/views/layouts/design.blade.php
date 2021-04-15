@@ -78,15 +78,12 @@
 </head>
 
 <!-- Pre loader -->
-<body >
-<div class="center-preloader" id="onload">
-<div><img src="{{ asset('img/preloader.gif') }}"></div>
-</div>
+<body>
+
 
 
 
 @include('layouts.header')
-
 
 
 @include('layouts.slidebar')

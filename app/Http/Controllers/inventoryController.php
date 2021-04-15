@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+
 use App\Inventory;
 use DB;
 
@@ -15,13 +16,15 @@ class InventoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+
+        $Channels = DB::table('Channel')->get();
         
         $inventory = DB::table('inventory')
             ->join('channel', 'inventory.channel', '=', 'channel.id')
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('Inventory.index')->with(compact('inventory'));
+        return view('inventory.index')->with(compact('inventory','Channels'));
     }
 
     /**
@@ -31,17 +34,6 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {  
         $this->validate($request, [
             'section' => 'required',
             'position' => 'required',
@@ -69,6 +61,19 @@ class InventoryController extends Controller
         $inventory->save(); 
 
         return redirect('/Inventory')->with('success','Data saved');
+       
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {  
+
+       
     }
 
     /**
