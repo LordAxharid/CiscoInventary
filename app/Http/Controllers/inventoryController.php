@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 
 use App\Inventory;
+use App\Channel;
 use DB;
 
 
@@ -17,14 +18,16 @@ class InventoryController extends Controller
      */
     public function index(){
 
-        $Channels = DB::table('Channel')->get();
+        $channels = DB::table('Channel')->get();
+        $channeladd = DB::table('Channel')->get();
+        $channelupd = DB::table('Channel')->get();
         
         $inventory = DB::table('inventory')
             ->join('channel', 'inventory.channel', '=', 'channel.id')
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory','Channels'));
+        return view('inventory.index')->with(compact('inventory','channels','channeladd', 'channelupd'));
     }
 
     /**
@@ -34,6 +37,19 @@ class InventoryController extends Controller
      */
     public function create()
     {
+        $channels = Channel::get();
+        return view('inventory.index')->with(compact('channels'));
+       
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {  
         $this->validate($request, [
             'section' => 'required',
             'position' => 'required',
@@ -62,16 +78,6 @@ class InventoryController extends Controller
 
         return redirect('/Inventory')->with('success','Data saved');
        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {  
 
        
     }
@@ -96,7 +102,8 @@ class InventoryController extends Controller
     public function edit($id)
     {
         $inventory = Inventory::find($id);
-        return redirect('/Inventory')->with('success','Data saved');
+        $channels = Channel::all();
+        return view('inventory.index')->with(compact('inventory','channels'));
 
     }
 
@@ -107,25 +114,26 @@ class InventoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   /* public function update(Request $request, $id)
+    public function update(Request $request, $id=null)
     {
-        $inventary= Inventary::findOrFail($id);
+        $data = $request->all();
+        $section = $data['section'];
+        $position = $data['position'];
+        $state = $data['state'];
+        $product = $data['product'];
+        $pdrpid = $data['pdrpid'];
+        $serial = $data['serial'];
+        $code = $data['code'];
+        $channel = $data['channel'];
+        $observation = $data['observation'];
 
-        $inventary->section =$request->section;
-        $inventary->position =$request->position;
-        $inventary->state =$request->state;
-        $inventary->product =$request->product;
-        $inventary->pdrpid =$request->pdrpid;
-        $inventary->serial =$request->serial;
-        $inventary->code =$request->code;
-        $inventary->channel =$request->channel;
-        $inventary->observation =$request->observation;
-        
-        $inventary->save();
+        Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'state'=>$data['state'], 'product'=>$data['product'], 
+        'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'channel'=>$data['channel'], 'observation'=>$data['observation']]);
+        return redirect('/Inventory')->with('success','Data saved');
     }
 
     
-     * Remove the specified resource from storage.
+     /* Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
