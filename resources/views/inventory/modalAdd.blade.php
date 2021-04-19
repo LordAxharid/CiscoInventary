@@ -122,14 +122,6 @@
                                                                <label class="login2">Code</label>
                                                                <input type="text" class="form-control" name="code" placeholder="Ej: CP-7960G" />
                                                             </div>
-                                                            <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                                                               <label class="login2">Channel</label>
-                                                               <select name="channel" id="channel" class="form-control">
-                                                                  @foreach ( $channels as $channels )
-                                                                  <option value="{{$channels->id}}"> {{$channels->nchannel}} </option>
-                                                                  @endforeach
-                                                               </select>
-                                                            </div>
                                                          </div>
                                                       </div>
                                                       <div class="form-group-inner">

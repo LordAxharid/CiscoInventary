@@ -23,6 +23,8 @@ Route::get('/Developers', 'DeveloperController@index');
 //Rutas Del Inventario
 //Route::get('/Inventary', 'inventaryController@index');
 Route::Resource('/Inventory', 'inventoryController');
+Route::post('/Inventory/{id}', 'inventoryController@inventoryUpdateChannel');
+Route::post('/Inventory/AddLoan', 'inventoryController@inventoryToLoan');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
 
 //Route::Post('/Inventaryadd', 'InventaryController@store');

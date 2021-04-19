@@ -23,7 +23,7 @@
                                                 <h3>UPDATE DEVICE</h3>
                                                 <form  action="{{ url('Inventory/'.$inventory->id) }}" method="POST">
                                                    {{ csrf_field() }}
-                                                   {{ method_field('PUT') }}
+                                                 
                                                    <div class="form-group-inner">
                                                       <div class="row">
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
@@ -33,6 +33,7 @@
                                                             <label class="login2">Section</label>
                                                             <div class="form-select-list">
                                                                <select class="form-control custom-select-value" name="section" id="section">
+                                                                  <option value="{{ $inventory->section }}">{{ $inventory->section }}</option>
                                                                   <option value="SECCION A">SECCION A</option>
                                                                   <option value="SECCION B">SECCION B</option>
                                                                   <option value="SECCION C">SECCION C</option>
@@ -97,7 +98,7 @@
                                                       <div class="row">
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
                                                          <label class="login2">State</label>
-                                                            <input type="text" class="form-control" name="state" id="state"  value="{{ $inventory->state }}" readonly>
+                                                            <input type="text" class="form-control" name="" id=""  value="{{ $inventory->state }}" readonly>
                                                          </div>
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
                                                             <label class="login2">Product</label>
@@ -123,15 +124,6 @@
                                                             <label class="login2">Code</label>
                                                             <input type="text" class="form-control" name="code" id="code" value="{{ $inventory->code }}"/>
                                                          </div>
-                                                         <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12" >
-                                                            <label class="login2">Channel</label>
-                                                            <select name="channel" class="form-control" >
-                                                                @foreach ( $channels as $channels )
-                                                                <option value="{{$channels->id}}"> {{$channels->nchannel}} </option>
-                                                                @endforeach
-                                                             </select>
-                                                         </div>
-                                                      </div>
                                                    </div>
                                                    <div class="form-group-inner">
                                                       <div class="row">
