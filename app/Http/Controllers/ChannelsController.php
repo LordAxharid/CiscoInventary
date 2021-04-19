@@ -40,6 +40,16 @@ class ChannelsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nchannel' => 'required',
+        ]);
+
+        $channel= new Channel;
+        $channel->nchannel =$request->input('nchannel');
+
+        $channel->save(); 
+
+        return redirect('/Channels')->with('success','Data saved');
     
     }
 

@@ -140,9 +140,9 @@ class InventoryController extends Controller
      */
     public function destroy($id)
     {
-        $inventory = Inventory::findOrFail($id);
-        $inventory->delete();
-     
-        return response()->json(['success'=>'Inventary deleted successfully.']);
+       Inventory::where(['id'=>$id])->delete();
+
+       $inventory = Inventory::get();
+       return redirect('/Inventory')->with('success','Data saved');
     }
 }
