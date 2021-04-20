@@ -14,7 +14,7 @@
 			{	
 				nchannel:
 				{
-					required: 'Please enter first name'
+					required: 'Please enter name channel'
 				}
 			},					
 			
@@ -82,122 +82,84 @@
 		});
  
  // Validation for order form
-		$(".addcourse").validate(
+		$(".add-inventory").validate(
 		{					
 			rules:
 			{	
-				coursename:
+				section:
 				{
 					required: true
 				},
-				finish:
+				position:
 				{
 					required: true
 				},
-				duration:
+				state:
 				{
 					required: true
 				},
-				price:
+				product:
 				{
 					required: true
 				},
-				imageico:
+				pdrpid:
 				{
 					required: true
 				},
-				department:
+				serial:
 				{
 					required: true
 				},
-				description:
+				code:
 				{
 					required: true
 				},
-				crprofessor:
+				channel:
 				{
 					required: true
 				},
-				year:
-				{
-					required: true
-				},
-				email:
+				observation:
 				{
 					required: true,
-					email: true
-				},
-				phoneno:
-				{
-					required: true
-				},
-				password:
-				{
-					required: true,
-					minlength: 3,
-					maxlength: 20
-				},
-				confarmpassword:
-				{
-					required: true,
-					minlength: 3,
-					maxlength: 20
 				}
 			},
 			messages:
 			{	
-				coursename:
+				section:
 				{
-					required: 'Please enter course name'
+					required: 'Please select section'
 				},
-				finish:
+				position:
 				{
-					required: 'Please select date of birth'
+					required: 'Please enter position'
 				},
-				duration:
+				state:
 				{
-					required: 'Please enter duration'
+					required: 'Please select state'
 				},
-				price:
+				product:
 				{
-					required: 'Please enter price'
+					required: 'Please enter product'
 				},
-				imageico:
+				pdrpid:
 				{
-					required: 'Please enter image'
+					required: 'Please enter pdrpid'
 				},
-				department:
+				serial:
 				{
-					required: 'Please enter department'
+					required: 'Please enter serial'
 				},
-				description:
+				code:
 				{
-					required: 'Please enter description'
+					required: 'Please enter code'
 				},
-				crprofessor:
+				channel:
 				{
-					required: 'Please enter course professor'
+					required: 'Please select channel'
 				},
-				year:
+				observation:
 				{
-					required: 'Please enter year'
-				},
-				email:
-				{
-					required: 'Please enter your email address',
-					email: 'Please enter a VALID email address'
-				},
-				phoneno:
-				{
-					required: 'Please enter mobile number'
-				},
-				password:
-				{
-					required: 'Please enter your password'
-				},
-				confarmpassword:
-				{
-					required: 'Please enter your confarm password'
+					required: 'Please enter observation'
 				}
 				
 			},					

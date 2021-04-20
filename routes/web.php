@@ -23,8 +23,8 @@ Route::get('/Developers', 'DeveloperController@index');
 //Rutas Del Inventario
 
 
-Route::post('/Inventory/{id}', 'inventoryController@inventoryUpdateChannel');
-Route::post('/Inventory/AddLoan', 'inventoryController@inventoryToLoan');
+//Route::post('/Inventory/{id}', 'inventoryController@inventoryUpdateChannel');
+//Route::post('/Inventory/AddLoan', 'inventoryController@inventoryToLoan');
 Route::Resource('/Inventory', 'inventoryController');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
 
@@ -37,7 +37,7 @@ Route::Resource('/Inventory', 'inventoryController');
 Route::Resource('/Channel', 'ChannelsController');
 
 //Rutas De Prestamos
-Route::get('/loans', 'LoanController@index');
+//Route::get('/loans', 'LoanController@index');
 Route::resource('/loans', 'LoanController');
 
 //Rutas De Graficos
