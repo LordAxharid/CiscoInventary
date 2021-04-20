@@ -32,7 +32,7 @@
                                             <thead>
                                                 <tr>
                                                     <th data-field="id">ID</th>
-                                                    <th data-field="section" data-editable="true">Section</th>
+                                                    <th data-field="nchannel" data-editable="true">Channel</th>
                                                     <th data-field="action">Action</th>
                                                 </tr>
                                             </thead>

@@ -1,6 +1,6 @@
 @extends('layouts.design')
 @section('content')<br><br>
-<hr>
+
 <div class="containerTables">
 
 <div class="all-content-wrapper ">
@@ -53,7 +53,7 @@
                                  <td>{{ $inventory->observation }}</td>
                                
                                  <td> <i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventaryUpd{{ $inventory->id }}">Edit</i><br>
-                                    <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete{{$inventory->id}}"> Delete</i></strong>
+                                    <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete{{$inventory->id}}"> Delete</i>
                                  
                                     @include('inventory.modalUpdate')
                                     @include('inventory.modalDelete')

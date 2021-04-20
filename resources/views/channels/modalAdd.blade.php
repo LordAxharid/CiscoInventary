@@ -23,7 +23,7 @@
                                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                              <div class="basic-login-inner modal-basic-inner">
                                                                  <h3>ADD NEW CHANNEL</h3>
-                                                                 <form action="{{ route('Channels.store') }}"
+                                                                 <form action="{{ route('Channel.store') }}"
                                                                      method="POST">
                                                                      {{ csrf_field() }}
                                                                      <div class="form-group-inner">
@@ -38,22 +38,26 @@
                                                                              </div>
                                                                          </div>
                                                                      </div>
+                                                                     <div class="login-btn-inner">
+                                                                         <div class="row">
+                                                                             <div
+                                                                                 class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                                                                                 <div class="login-horizental">
+                                                                                     <button
+                                                                                         class="btn btn-sm btn-primary login-submit-cs"
+                                                                                         style="float: left;"
+                                                                                         type="submit">Add
+                                                                                         Channel</button>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                     </div>
                                                                  </form>
                                                              </div>
                                                          </div>
                                                      </div>
                                                  </div>
-                                                 <div class="login-btn-inner">
-                                                     <div class="row">
-                                                         <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                                                             <div class="login-horizental">
-                                                                 <button class="btn btn-sm btn-primary login-submit-cs"
-                                                                     style="float: left;" type="submit">Add
-                                                                     Channel</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
+
                                              </div>
                                          </div>
                                      </div>
