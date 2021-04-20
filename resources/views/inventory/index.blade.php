@@ -41,7 +41,12 @@
                               @foreach($inventory as $inventory)
                               <tr>
                                  <td></td>
-                                 <td><i class="far fa-handshake iconColorBlue" data-toggle="modal" data-target="#zoomInDownLoan{{ $inventory->id }}"></i></td>
+                                 <td>
+                                 @if($inventory->state=='available')
+                                 <i class="far fa-handshake iconColorBlue" data-toggle="modal" data-target="#zoomInDownLoan{{ $inventory->id }}"></i>
+                                 @else
+                                 Taken
+                                 @endif</td>
                                  <td>{{ $inventory->section }}</td>
                                  <td>{{ $inventory->position }}</td>
                                  <td>{{ $inventory->state }}</td>
@@ -56,7 +61,7 @@
                                     <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete"> Delete</i></strong>
                                  
                                     @include('inventory.modalUpdate')    
-                                   
+                                  
                                  </td>   
                                  @include('inventory.modalLoan')    
                               </tr>

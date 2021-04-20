@@ -21,7 +21,7 @@
                                              <div class="basic-login-inner modal-basic-inner">
                                           
                                                 <h3>UPDATE DEVICE</h3>
-                                                <form  action="{{ url('Inventory/'.$inventory->id) }}" method="POST">
+                                                <form  action="{{ url('Inventory/EditItem/'.$inventory->id) }}" method="POST">
                                                    {{ csrf_field() }}
                                                  
                                                    <div class="form-group-inner">
