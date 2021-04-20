@@ -64,7 +64,9 @@
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu-vertical.css') }}">
-   
+   <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/form/all-type-forms.css')}}">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -144,7 +146,11 @@
     <!-- calendar JS
 		============================================ -->
     <script src="{{ asset('js/calendar/moment.min.js') }}"></script>
-    
+    <!-- form validate JS
+		============================================ -->
+    <script src="{{ asset('js/form-validation/jquery.form.min.js')}}"></script>
+    <script src="{{ asset('js/form-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('js/form-validation/form-active.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="{{ asset('js/plugins.js') }}"></script>

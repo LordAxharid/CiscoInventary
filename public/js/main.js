@@ -109,3 +109,16 @@ window.onload = function(){
 	
 }
 
+
+function valida_envia(){
+
+	if (document.fvalida.nchannel.value.length==0) {
+		alert("you have to write nchannel")
+		document.fvalida.nchannel.focus()
+		return 0;
+	}
+
+	alert("Thanks you for submmitting the form");
+	document.fvalida.submit();
+}
+

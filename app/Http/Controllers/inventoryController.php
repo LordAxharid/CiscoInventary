@@ -40,7 +40,7 @@ class InventoryController extends Controller
     public function create()
     {
         $channels = Channel::get();
-        return view('inventory.modalAdd')->with(compact('channels'));
+        return view('inventory.index')->with(compact('channels'));
        
     }
 
@@ -76,7 +76,7 @@ class InventoryController extends Controller
         
         $inventory->save(); 
 
-        return view('inventory.index')->with(compact('inventory','channels','channeladd', 'channelupd', 'channelsUpTo'));
+        return view('inventory.index')->with(compact('inventory'));
        
 
        

@@ -49,7 +49,7 @@ class ChannelsController extends Controller
 
         $channel->save(); 
 
-        return redirect('/Channels')->with('success','Data saved');
+        //return redirect('/Channels')->with('success','Data saved');
     
     }
 

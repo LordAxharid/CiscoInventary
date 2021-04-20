@@ -4185,6 +4185,9 @@ div#sparklinehome canvas {
 .add-professors .invalid, .addcourse .invalid, .comment .invalid, .addcoursepro .invalid, .add-department .invalid {
     color: #D80027;
 }
+.add-channel .invalid{
+    color: #D80027;
+}
 .form-group textarea{
 	width:100%;
 	height:134px;

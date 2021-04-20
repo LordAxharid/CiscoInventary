@@ -21,10 +21,11 @@ Route::get('/Logout', 'LoginController@Logout');
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-Route::get('/Inventory', 'inventoryController@index');
-Route::post('/Inventory/AddInventory', 'InventoryController@store');
+
+
 Route::post('/Inventory/{id}', 'inventoryController@inventoryUpdateChannel');
 Route::post('/Inventory/AddLoan', 'inventoryController@inventoryToLoan');
+Route::Resource('/Inventory', 'inventoryController');
 //Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
 
 //Route::Post('/Inventaryadd', 'InventaryController@store');

@@ -1,124 +1,20 @@
 (function ($) {
  "use strict";
  // Validation for order form
-		$(".add-professors").validate(
+		$(".add-channel").validate(
 		{					
 			rules:
 			{	
-				firstname:
-				{
-					required: true
-				},
-				lastname:
-				{
-					required: true
-				},
-				address:
-				{
-					required: true
-				},
-				department:
-				{
-					required: true
-				},
-				postcode:
-				{
-					required: true
-				},
-				imageico:
-				{
-					required: true
-				},
-				mobileno:
-				{
-					required: true
-				},
-				description:
-				{
-					required: true
-				},
-				gender:
-				{
-					required: true
-				},
-				country:
-				{
-					required: true
-				},
-				state:
-				{
-					required: true
-				},
-				city:
-				{
-					required: true
-				},
-				website:
-				{
-					required: true
-				},
-				finish:
+				nchannel:
 				{
 					required: true
 				}
 			},
 			messages:
 			{	
-				firstname:
+				nchannel:
 				{
 					required: 'Please enter first name'
-				},
-				lastname:
-				{
-					required: 'Please enter last name'
-				},
-				address:
-				{
-					required: 'Please enter your address'
-				},
-				department:
-				{
-					required: 'Please enter department'
-				},
-				postcode:
-				{
-					required: 'Please enter postcode'
-				},
-				imageico:
-				{
-					required: 'Please upload image'
-				},
-				mobileno:
-				{
-					required: 'Please enter mobile number'
-				},
-				description:
-				{
-					required: 'Please enter description'
-				},
-				gender:
-				{
-					required: 'Please select gender'
-				},
-				country:
-				{
-					required: 'Please select country'
-				},
-				state:
-				{
-					required: 'Please select state'
-				},
-				city:
-				{
-					required: 'Please select city'
-				},
-				website:
-				{
-					required: 'Please enter website url'
-				},
-				finish:
-				{
-					required: 'Please select date of birth'
 				}
 			},					
 			

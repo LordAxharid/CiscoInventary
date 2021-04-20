@@ -24,7 +24,7 @@
                                                              <div class="basic-login-inner modal-basic-inner">
                                                                  <h3>ADD NEW CHANNEL</h3>
                                                                  <form action="{{ route('Channel.store') }}"
-                                                                     method="POST">
+                                                                     method="POST" class="   add-channel">
                                                                      {{ csrf_field() }}
                                                                      <div class="form-group-inner">
                                                                          <div class="row">
