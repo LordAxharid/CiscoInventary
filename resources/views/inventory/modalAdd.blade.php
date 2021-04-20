@@ -20,7 +20,7 @@
                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="basic-login-inner modal-basic-inner">
                                                    <h3>Insert Data Device</h3>
-                                                   <form action="{{ route('Inventory.store') }}" method="POST" class=" add-inventory">
+                                                   <form action="{{ url('/Inventory/AddItem') }}" method="POST">
                                                       {{ csrf_field() }}
                                                       <div class="form-group-inner">
                                                          <div class="row">
@@ -94,7 +94,7 @@
                                                                <label class="login2">State</label>
                                                                <div class="form-select-list">
                                                                   <select class="form-control custom-select-value" name="state">
-                                                                     <option>Available</option>
+                                                                     <option value="available">Available</option>
                                                                   </select>
                                                                </div>
                                                             </div>

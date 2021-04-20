@@ -11,110 +11,49 @@ use DB;
 
 class InventoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index(){
 
         $channels = DB::table('Channel')->get();
-        $channeladd = DB::table('Channel')->get();
-        $channelupd = DB::table('Channel')->get();
         
         $inventory = DB::table('inventory')
             ->join('channel', 'inventory.channel', '=', 'channel.id')
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory','channels','channeladd', 'channelupd'));
+        return view('inventory.index')->with(compact('inventory','channels'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $channels = Channel::get();
-        return view('inventory.index')->with(compact('channels'));
-       
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+  
+    public function AddInventory(Request $request)
     {  
-        $this->validate($request, [
-            'section' => 'required',
-            'position' => 'required',
-            'state' => 'required',
-            'product' => 'required',
-            'pdrpid' => 'required',
-            'serial' => 'required',
-            'code' => 'required',
-            'observation' => 'required',
+       $data = $request->all();
+        DB::table('inventory')->insert([
+            ['section' => $data['section'], 'position' => 
+            $data['position'], 'state' => $data['state'], 'product' => $data['product'], 'pdrpid' => 
+            $data['pdrpid'], 'serial' => $data['serial'], 'code' => 
+            $data['code'], 'observation' => $data['observation']]
         ]);
 
-        $inventory= new Inventory;
-
-        $inventory->section =$request->input('section');
-        $inventory->position =$request->input('position');
-        $inventory->state =$request->input('state');
-        $inventory->product =$request->input('product');
-        $inventory->pdrpid =$request->input('pdrpid');
-        $inventory->serial =$request->input('serial');
-        $inventory->code =$request->input('code');
-        $inventory->channel =$request->input('channel');
-        $inventory->observation =$request->input('observation');
-        
-        $inventory->save(); 
-
-        return view('inventory.index')->with(compact('inventory'));
-       
-
+        return redirect('/Inventory')->with('success','Data saved');
        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
+
         $inventory = Inventory::find($id);
         $channels = Channel::all();
         return view('inventory.index')->with(compact('inventory','channels'));
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id=null)
     {
+
         $data = $request->all();
         $section = $data['section'];
         $position = $data['position'];
@@ -129,19 +68,51 @@ class InventoryController extends Controller
         Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'state'=>$data['state'], 'product'=>$data['product'], 
         'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'channel'=>$data['channel'], 'observation'=>$data['observation']]);
         return redirect('/Inventory')->with('success','Data saved');
+
     }
 
-    
-     /* Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+//Incio Funciones Para Prestar Un Articulo Del Inventario
+
+    public function joinToLoan_AfterLoan(Request $request, $id=null){
+       
+        $data=$request->all();
+       
+        $this->inventoryToLoan($data);
+        $this->updateAfterLoan($data, $id);
+
+        return redirect()->back();
+    }
+
+    public function inventoryToLoan(array $data)
+    {
+
+        DB::table('loan')->insert([
+            ['idinventary' => $data['idInv'], 'loancode' => 
+            $data['idloan'], 'state' => $data['state'], 'pdrp_id' => $data['pdrpid'], 'serial' => 
+            $data['serial'], 'channel' => $data['channel'], 'dateloan' => 
+            $data['dateloan'], 'estimateddate' => $data['estimateddate'], 'observation' => $data['observation']]
+        ]);
+
+    }
+
+    public function updateAfterLoan(array $data, $id=null)
+    {
+        
+        $loanInventory = DB::table('inventory')
+        ->where('id', $id)
+        ->update(['code' => $data['idloan'], 'channel' => $data['channel'], 'state' => $data['state']]);
+
+    }
+
+    //Fin Funciones Para Prestar Un Articulo Del Inventario
+
     public function destroy($id)
     {
-       Inventory::where(['id'=>$id])->delete();
 
-       $inventory = Inventory::get();
-       return redirect('/Inventory')->with('success','Data saved');
+        $inventory = Inventory::findOrFail($id);
+        $inventory->delete();
+     
+        return response()->json(['success'=>'Inventary deleted successfully.']);
+
     }
 }

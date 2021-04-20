@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Loan;
+use App\Channel;
 use DB;
 
 class LoanController extends Controller
@@ -15,9 +16,14 @@ class LoanController extends Controller
      */
     public function index()
     {
-        $loan = DB::table('Loan')->get();
-      
-        return view('loans.index')->with(compact('loan'));
+        $channels = DB::table('Channel')->get();
+        
+        $loan = DB::table('loan')
+            ->join('channel', 'loan.channel', '=', 'channel.id')
+            ->select('loan.*', 'channel.nchannel')
+            ->get();
+
+        return view('loans.index')->with(compact('loan','channels'));
     }
 
     /**

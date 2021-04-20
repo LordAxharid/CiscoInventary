@@ -21,24 +21,16 @@ Route::get('/Logout', 'LoginController@Logout');
 Route::get('/Developers', 'DeveloperController@index');
 
 //Rutas Del Inventario
-
-
-//Route::post('/Inventory/{id}', 'inventoryController@inventoryUpdateChannel');
-//Route::post('/Inventory/AddLoan', 'inventoryController@inventoryToLoan');
-Route::Resource('/Inventory', 'inventoryController');
-//Route::match(['get', 'post'], 'inventary', 'inventaryController@store');
-
-//Route::Post('/Inventaryadd', 'InventaryController@store');
-
-//Route::get('Inventarydele_te/destroy/{id}', 'InventaryController@destroy');
-
-//Route::get('/Inventary', 'InventaryController@index');
-//Rutas De Los Canales
-Route::Resource('/Channel', 'ChannelsController');
+Route::get('/Inventory', 'inventoryController@index');
+Route::post('/Inventory/AddItem', 'inventoryController@AddInventory');
+Route::post('/Inventory/UpdAddLoan/{id}', 'inventoryController@joinToLoan_AfterLoan');
+Route::post('/Inventory/EditItem/{id}', 'inventoryController@update');
 
 //Rutas De Prestamos
-//Route::get('/loans', 'LoanController@index');
-Route::resource('/loans', 'LoanController');
+Route::get('/loans', 'LoanController@index');
+
+//Rutas De Los Canales
+Route::Resource('/Channel', 'ChannelsController');
 
 //Rutas De Graficos
 Route::get('/Charts', 'ChartsController@ChartLoanChannels');
