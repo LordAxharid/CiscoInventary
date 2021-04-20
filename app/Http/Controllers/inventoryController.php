@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 
 
 use App\Inventory;
-use App\Loan;
 use App\Channel;
 use DB;
 
@@ -20,7 +19,6 @@ class InventoryController extends Controller
     public function index(){
 
         $channels = DB::table('Channel')->get();
-        $channelsUpTo = DB::table('Channel')->get();
         $channeladd = DB::table('Channel')->get();
         $channelupd = DB::table('Channel')->get();
         
@@ -29,7 +27,7 @@ class InventoryController extends Controller
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory','channels','channeladd', 'channelupd', 'channelsUpTo'));
+        return view('inventory.index')->with(compact('inventory','channels','channeladd', 'channelupd'));
     }
 
     /**
@@ -72,6 +70,7 @@ class InventoryController extends Controller
         $inventory->pdrpid =$request->input('pdrpid');
         $inventory->serial =$request->input('serial');
         $inventory->code =$request->input('code');
+        $inventory->channel =$request->input('channel');
         $inventory->observation =$request->input('observation');
         
         $inventory->save(); 
@@ -119,45 +118,17 @@ class InventoryController extends Controller
         $data = $request->all();
         $section = $data['section'];
         $position = $data['position'];
+        $state = $data['state'];
         $product = $data['product'];
         $pdrpid = $data['pdrpid'];
         $serial = $data['serial'];
         $code = $data['code'];
+        $channel = $data['channel'];
         $observation = $data['observation'];
 
-        Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'product'=>$data['product'], 
-        'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'observation'=>$data['observation']]);
+        Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'state'=>$data['state'], 'product'=>$data['product'], 
+        'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'channel'=>$data['channel'], 'observation'=>$data['observation']]);
         return redirect('/Inventory')->with('success','Data saved');
-    }
-
-    public function inventoryToLoan(Request $request)
-    {
-
-        $loan= new Loan;
-
-        $loan->loancode =$request->input('idloan');
-        $loan->pdrp_id =$request->input('pdrpid');
-        $loan->serial =$request->input('serial');
-        $loan->channel =$request->input('channel');
-        $loan->dateloan =$request->input('dateloan');
-        $loan->estimatedreturn =$request->input('estimateddate');
-        $loan->realreturn =$request->input('realreturn');
-        $loan->state =$request->input('state');
-        $loan->pastdays =$request->input('pastdays');
-        $loan->observation =$request->input('observation');
-        
-        $loan->save(); 
-      
-
-        return redirect('/Inventory')->with('success','Data saved');
-
-    }
-
-    public function inventoryUpdateChannel(Request $request, $id=null)
-    {
-
-
-      
     }
 
     

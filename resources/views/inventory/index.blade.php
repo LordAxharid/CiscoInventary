@@ -40,7 +40,7 @@
                            <tbody>
                               @foreach($inventory as $inventory)
                               <tr>
-                                 <td>{{ $inventory->id }}</td>
+                                 <td></td>
                                  <td><i class="far fa-handshake iconColorBlue" data-toggle="modal" data-target="#zoomInDownLoan{{ $inventory->id }}"></i></td>
                                  <td>{{ $inventory->section }}</td>
                                  <td>{{ $inventory->position }}</td>
