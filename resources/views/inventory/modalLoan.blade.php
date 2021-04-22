@@ -102,7 +102,7 @@
                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                        <div class="login-horizental">
-                                       <button class="btn btn-sm btn-primary login-submit-cs" id="UpdateInventary" type="submit">Save Changes</button>
+                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Data</button>
                                        </div>
                                        </div>
                                        </div>

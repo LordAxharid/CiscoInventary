@@ -8,7 +8,7 @@
                <div class="basic-login-form-ad">
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div id="zoomInDownInventaryUpd{{$inventory->id}}" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
+                        <div id="zoomInDownInventoryUpd{{$inventory->id}}" class="modal modal-edu-general modal-zoomInDown fade" role="dialog">
                            <div class="modal-dialog">
                               <div class="modal-content">
                                  <div class="modal-close-area modal-close-df">

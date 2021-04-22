@@ -19,8 +19,9 @@ class LoanController extends Controller
         $channels = DB::table('Channel')->get();
         
         $loan = DB::table('loan')
+            ->join('inventory', 'loan.idinventary', '=', 'inventory.id')
             ->join('channel', 'loan.channel', '=', 'channel.id')
-            ->select('loan.*', 'channel.nchannel')
+            ->select('loan.*', 'channel.nchannel', 'inventory.id')
             ->get();
 
         return view('loans.index')->with(compact('loan','channels'));

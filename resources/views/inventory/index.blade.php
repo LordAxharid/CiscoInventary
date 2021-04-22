@@ -1,7 +1,7 @@
 @extends('layouts.design')
 @section('content')<br><br>
-
-<div class="containerTables">
+<hr>
+<div class="containerTables" style="position: absolute; margin-top: 0; ">
 
 <div class="all-content-wrapper ">
    <div class="data-table-area mg-b-15">
@@ -23,7 +23,7 @@
                            data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                            <thead>
                               <tr>
-                                 <th data-field="state" data-checkbox="true"></th>
+                                 <th></th>
                                  <th data-field="plus">Lend</th>
                                  <th data-field="section" data-editable="true">Section</th>
                                  <th data-field="email" data-editable="true">Position</th>
@@ -40,7 +40,9 @@
                            <tbody>
                               @foreach($inventory as $inventory)
                               <tr>
-                                 <td></td>
+                                    
+                                 <td><input type="checkbox"></td>
+                                    
                                  <td>
                                  @if($inventory->state=='available')
                                  <i class="far fa-handshake iconColorBlue" data-toggle="modal" data-target="#zoomInDownLoan{{ $inventory->id }}"></i>
@@ -57,22 +59,25 @@
                                  <td>{{ $inventory->nchannel }}</td>
                                  <td>{{ $inventory->observation }}</td>
                                
-                                 <td> <i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventaryUpd{{ $inventory->id }}">Edit</i><br>
-                                    <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete{{$inventory->id}}"> Delete</i>
+                                 <td><i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventoryUpd{{ $inventory->id }}">Edit</i><br>
+                                     <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete"> Delete</i></strong>
                                  
                                     @include('inventory.modalUpdate')    
-                                  
+                                 
+                                   
+                                   
                                  </td>   
-                                 @include('inventory.modalLoan')    
+                                 @include('inventory.modalLoan') 
                               </tr>
                               @endforeach
 
                            
 
                            </tbody>
-                        </table>
-                       
+                           
 
+                        </table>
+                   
                      </div>
                      @include('inventory.modalAdd')
                      @include('inventory.modalLoan')
