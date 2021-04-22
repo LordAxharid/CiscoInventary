@@ -86,10 +86,7 @@
 		{					
 			rules:
 			{	
-				section:
-				{
-					required: true
-				},
+				
 				position:
 				{
 					required: true
@@ -114,10 +111,6 @@
 				{
 					required: true
 				},
-				channel:
-				{
-					required: true
-				},
 				observation:
 				{
 					required: true,
@@ -125,10 +118,7 @@
 			},
 			messages:
 			{	
-				section:
-				{
-					required: 'Please select section'
-				},
+				
 				position:
 				{
 					required: 'Please enter position'
@@ -153,17 +143,11 @@
 				{
 					required: 'Please enter code'
 				},
-				channel:
-				{
-					required: 'Please select channel'
-				},
 				observation:
 				{
 					required: 'Please enter observation'
 				}
-				
 			},					
-			
 			errorPlacement: function(error, element)
 			{
 				error.insertAfter(element.parent());
@@ -438,4 +422,102 @@
 		});
 		
  
-})(jQuery); 
+})(jQuery);
+const formulario=document.getElementById('formulario-invet');
+const inputs= document.querySelectorAll('#formulario-invet input');
+const textareas= document.querySelectorAll('#formulario-invet textarea');
+const expresiones = {
+	position: /^[a-zA-Z0-9\_\-]{1,16}$/, // Letras, numeros, guion y guion_bajo
+	product: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	pdrpid: /^[a-zA-Z0-9\_\-]{1,20}$/, // Letras, numeros, guion y guion_bajo
+	serial: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
+	code: /^[a-zA-Z0-9\_\-]{1,20}$/, // Letras, numeros, guion y guion_bajo
+	observation: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+const campos = {
+	position: false,
+	product: false,
+	pdrpid: false,
+	serial: false,
+	code: false,
+	observation: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name){
+		case "position":
+			validarCampo(expresiones.position, e.target, 'position');
+		break;
+		case "product":
+			validarCampo(expresiones.product, e.target, 'product');
+		break;
+		case "pdrpid":
+			validarCampo(expresiones.pdrpid, e.target, 'pdrpid');
+		break;
+		case "serial":
+			validarCampo(expresiones.serial, e.target, 'serial');
+		break;
+		case "code":
+			validarCampo(expresiones.code, e.target, 'code');
+		break;
+		case "observation":
+			validarCampo1(expresiones.observation, e.target, 'observation');
+		break;
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+	if (expresion.test(input.value)) {
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error--activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+const validarCampo1 = (expresion, textarea, campo1) => {
+	if (expresion.test(textarea.value)) {
+		document.getElementById(`grupo__${campo1}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo1}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo1} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo1} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo1} .formulario__input-error`).classList.remove('formulario__input-error--activo');
+		campos[campo1] = true;
+	} else {
+		document.getElementById(`grupo__${campo1}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo1}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo1} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo1} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo1} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo1] = false;
+	}
+}
+
+textareas.forEach((textarea) => {
+	textarea.addEventListener('keyup', validarFormulario);
+	textarea.addEventListener('blur', validarFormulario);
+});
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+	
+
+	if (campos.position && campos.product && campos.pdrpid && campos.serial && campos.code && campos.observation ) {
+		
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		e.preventDefault();
+	}
+});

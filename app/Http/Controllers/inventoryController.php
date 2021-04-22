@@ -21,7 +21,7 @@ class InventoryController extends Controller
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory','channels'));
+        return view('Inventory.index')->with(compact('inventory','channels'));
 
     }
 
