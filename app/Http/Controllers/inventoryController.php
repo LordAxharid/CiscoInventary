@@ -22,11 +22,15 @@ class InventoryController extends Controller
             ->select('inventory.*', 'channel.nchannel')
             ->get();
 
-        return view('inventory.index')->with(compact('inventory','channels'));
+            $inventoryToLoan = DB::table('inventory')
+            ->join('channel', 'inventory.channel', '=', 'channel.id')
+            ->select('inventory.*', 'channel.nchannel')
+            ->get();
+
+        return view('inventory.index')->with(compact('inventory','channels', 'inventoryToLoan'));
 
     }
-
-
+    
   
     public function AddInventory(Request $request)
     {  
