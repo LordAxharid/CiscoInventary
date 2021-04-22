@@ -62,12 +62,15 @@
                                  <td><i class="fa fa-pencil iconColorBlue" data-toggle="modal" data-target="#zoomInDownInventoryUpd{{ $inventory->id }}">Edit</i><br>
                                      <i class="far fa-trash-alt iconColorBlue" data-toggle="modal" data-target="#DangerModalDelete"> Delete</i></strong>
                                  
-                                    @include('inventory.modalUpdate')    
+                                   
                                  
                                    
                                    
-                                 </td>   
-                                 @include('inventory.modalLoan') 
+                                 </td> 
+                                 <td>@include('inventory.modalUpdate')</td>
+                                 <td>  
+                                
+                                 @include('inventory.modalLoan') </td>
                               </tr>
                             
                               @endforeach
