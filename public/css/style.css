@@ -4813,6 +4813,11 @@ div#sparklinehome canvas {
    grid-template-columns: 1fr 1fr;
    gap: 20px;
 }
+.formulario2 {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+ }
 
 .formulario__label {
     display: block;
@@ -4861,18 +4866,17 @@ div#sparklinehome canvas {
     opacity: 0;
 }
 
-.formulario__mensaje, .formulario__grupo-btn-enviar {
+.formulario__mensaje, .formulario__grupo-btn-enviar, .formulario__mensajes {
     grid-column: span 2;
     
 }
 
-.formulario__mensaje {
+.formulario__mensaje, .formulario__mensajes {
     height: 45px;
     line-height: 45px;
     background: #F66060;
     padding:  0 15px;
     border-radius: 3px;
-    align-items: center;
     display: none;
 }
 
@@ -4880,7 +4884,7 @@ div#sparklinehome canvas {
     display: block;
 }
 
-.formulario__mensaje p {
+.formulario__mensaje p, .formulario__mensajes p {
     margin: 0;
 }
 
@@ -4918,3 +4922,4 @@ div#sparklinehome canvas {
 .formulario__grupo-incorrecto .formulario__input {
     border: 3px solid #bb2929;
 }
+/*   formulario loans*/

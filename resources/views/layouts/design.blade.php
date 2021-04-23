@@ -151,6 +151,7 @@
     <script src="{{ asset('js/form-validation/jquery.form.min.js')}}"></script>
     <script src="{{ asset('js/form-validation/jquery.validate.min.js')}}"></script>
     <script src="{{ asset('js/form-validation/form-active.js')}}"></script>
+    <script src="{{ asset('js/form-validation/form-loan.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="{{ asset('js/plugins.js') }}"></script>

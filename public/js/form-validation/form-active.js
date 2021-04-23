@@ -423,6 +423,7 @@
 		
  
 })(jQuery);
+
 const formulario=document.getElementById('formulario-invet');
 const inputs= document.querySelectorAll('#formulario-invet input');
 const textareas= document.querySelectorAll('#formulario-invet textarea');
@@ -484,21 +485,21 @@ const validarCampo = (expresion, input, campo) => {
 		campos[campo] = false;
 	}
 }
-const validarCampo1 = (expresion, textarea, campo1) => {
+const validarCampo1 = (expresion, textarea, campo) => {
 	if (expresion.test(textarea.value)) {
-		document.getElementById(`grupo__${campo1}`).classList.remove('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${campo1}`).classList.add('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${campo1} i`).classList.add('fa-check-circle');
-		document.querySelector(`#grupo__${campo1} i`).classList.remove('fa-times-circle');
-		document.querySelector(`#grupo__${campo1} .formulario__input-error`).classList.remove('formulario__input-error--activo');
-		campos[campo1] = true;
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error--activo');
+		campos[campo] = true;
 	} else {
-		document.getElementById(`grupo__${campo1}`).classList.add('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${campo1}`).classList.remove('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${campo1} i`).classList.add('fa-times-circle');
-		document.querySelector(`#grupo__${campo1} i`).classList.remove('fa-check-circle');
-		document.querySelector(`#grupo__${campo1} .formulario__input-error`).classList.add('formulario__input-error-activo');
-		campos[campo1] = false;
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
 	}
 }
 
@@ -515,9 +516,11 @@ formulario.addEventListener('submit', (e) => {
 	
 
 	if (campos.position && campos.product && campos.pdrpid && campos.serial && campos.code && campos.observation ) {
-		
+		formulario.reset();
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 		e.preventDefault();
 	}
 });
+
+

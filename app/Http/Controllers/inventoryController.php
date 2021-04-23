@@ -38,7 +38,8 @@ class InventoryController extends Controller
             ['section' => $data['section'], 'position' => 
             $data['position'], 'state' => $data['state'], 'product' => $data['product'], 'pdrpid' => 
             $data['pdrpid'], 'serial' => $data['serial'], 'code' => 
-            $data['code'], 'observation' => $data['observation']]
+            $data['code'] , 'channel' => 
+            $data['channel'], 'observation' => $data['observation']]
         ]);
 
         return redirect('/Inventory')->with('success','Data saved');
