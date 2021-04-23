@@ -25,7 +25,11 @@
                               <tr>
                                  <th></th>
                                  <th data-field="plus">Lend</th>
+<<<<<<< Updated upstream
                                  <th data-field="section" data-editable="true">Section</th>
+=======
+                                 <th data-field="name" data-editable="true">Section</th>
+>>>>>>> Stashed changes
                                  <th data-field="email" data-editable="true">Position</th>
                                  <th data-field="phone" data-editable="true">State</th>
                                  <th data-field="complete">Product</th>
@@ -72,6 +76,10 @@
                                 
                                  @include('inventory.modalLoan') </td>
                               </tr>
+<<<<<<< Updated upstream
+=======
+                            
+>>>>>>> Stashed changes
                               @endforeach
 
                            
@@ -83,10 +91,16 @@
                    
                      </div>
                      @include('inventory.modalAdd')
+<<<<<<< Updated upstream
                      @include('inventory.modalLoan')
                    
                   </div>
                   
+=======
+                    
+                  </div>
+                  @include('inventory.modalDelete')
+>>>>>>> Stashed changes
                </div>
             </div>
          </div>

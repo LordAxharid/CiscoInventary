@@ -30,7 +30,11 @@ Route::post('/Inventory/EditItem/{id}', 'inventoryController@update');
 Route::get('/loans', 'LoanController@index');
 
 //Rutas De Los Canales
+<<<<<<< Updated upstream
 Route::Resource('/Channel', 'ChannelsController');
+=======
+Route::Resource('/Channels', 'ChannelsController');
+>>>>>>> Stashed changes
 
 //Rutas De Graficos
 Route::get('/Charts', 'ChartsController@ChartLoanChannels');

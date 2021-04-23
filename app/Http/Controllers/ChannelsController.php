@@ -40,6 +40,7 @@ class ChannelsController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< Updated upstream
         $this->validate($request, [
             'nchannel' => 'required',
         ]);
@@ -50,6 +51,8 @@ class ChannelsController extends Controller
         $channel->save(); 
 
         //return redirect('/Channels')->with('success','Data saved');
+=======
+>>>>>>> Stashed changes
     
     }
 

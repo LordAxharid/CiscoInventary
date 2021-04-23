@@ -109,6 +109,7 @@ window.onload = function(){
 	
 }
 
+<<<<<<< Updated upstream
 
 function valida_envia(){
 
@@ -123,3 +124,5 @@ function valida_envia(){
 }
 
 
+=======
+>>>>>>> Stashed changes

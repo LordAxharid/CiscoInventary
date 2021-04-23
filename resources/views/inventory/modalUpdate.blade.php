@@ -141,6 +141,7 @@
                                                             <div class="login-horizental">
                                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Update Data</button>
                                                             </div>
+<<<<<<< Updated upstream
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,3 +157,26 @@
         </div>
     </div>
 </div>
+=======
+                                                         </div>
+                                                      </div>
+                                                      
+                                                   </div>
+                                                </form>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+>>>>>>> Stashed changes

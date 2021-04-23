@@ -4808,6 +4808,7 @@ div#sparklinehome canvas {
     float: right;
 }
 
+<<<<<<< Updated upstream
 .formulario {
    display: grid; 
    grid-template-columns: 1fr 1fr;
@@ -4923,3 +4924,5 @@ div#sparklinehome canvas {
     border: 3px solid #bb2929;
 }
 /*   formulario loans*/
+=======
+>>>>>>> Stashed changes
