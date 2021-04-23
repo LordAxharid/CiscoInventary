@@ -20,7 +20,7 @@
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                              <div class="basic-login-inner modal-basic-inner">
                                                 <h3>Lend Device</h3>
-                                                <form action="{{ url('/Inventory/UpdAddLoan/'.$inventory->id) }}" method="POST">
+                                                <form action="{{ url('/Inventory/UpdAddLoan/'.$inventory->id) }}" method="POST" name="formulario-loa" id="formulario-loan" class="formulario-loan">
                                                    {{ csrf_field() }}
                                                    <div class="form-group-inner">
                                                       <div class="row">
@@ -29,8 +29,14 @@
                                                             <input type="text" class="form-control" name="idInv" id="idInv" value="{{ $inventory->id }}"/>
                                                          </div>
                                                          <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12">
-                                                            <label class="login2">Id Loan</label>
-                                                            <input type="text" class="form-control" name="idloan" id="idloan" />
+                                                            <div class="formulario__grupo" id="grupos__idloan">
+                                                               <label for="idloan" class="formulario__label">Id Loan</label>
+                                                               <div class="formulario__grupo-input">
+                                                                  <input type="text"  name="idloan" id="idloan" class="formulario__input" />
+                                                                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                               </div>
+                                                               <p class="formulario__input-error"></p>
+                                                            </div>
                                                          </div>
                                                          <div class="col-lg-5 col-md-8 col-sm-8 col-xs-12">
                                                             <label class="login2">Devices Borrowed PID</label>
@@ -51,12 +57,24 @@
                                                    <div class="form-group-inner">
                                                       <div class="row">
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                                                            <label class="login2">Loan Date</label>
-                                                            <input type="date" class="form-control" name="dateloan" id="dateloan"/>
+                                                            <div class="formulario__grupo" id="grupos__dateloan">
+                                                               <label for="dateloan" class="formulario__label">Loan Date</label>
+                                                               <div class="formulario__grupo-input">
+                                                                  <input type="date" class="formulario__input" name="dateloan" id="dateloan"/>
+                                                                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                               </div>
+                                                               <p class="formulario__input-error"></p>
+                                                            </div>
                                                          </div>
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                                                            <label class="login2">Estimate Return</label>
-                                                            <input type="date" class="form-control" name="estimateddate" id="estimateddate" />
+                                                            <div class="formulario__grupo" id="grupos__estimateddate">
+                                                               <label for="estimateddate" class="formulario__label">Estimate Return</label>
+                                                               <div class="formulario__grupo-input">
+                                                                  <input type="date" class="formulario__input" name="estimateddate" id="estimateddate"/>
+                                                                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                               </div>
+                                                            <p class="formulario__input-error"></p>
+                                                         </div>
                                                          </div>
                                                       </div>
                                                       <div class="form-group-inner">
@@ -86,28 +104,38 @@
                                                          </div>
                                                       </div>
                                                    </div>
-                                             </div>
+                                             
                                              <div class="form-group-inner">
-                                             <div class="row">
-                                             <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
-                                             <label class="login2">Observation</label>
-                                             <textarea type="text" class="form-control" name="observation" id="observation"></textarea>
+                                                <div class="row">
+                                                   <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
+                                                      <div class="formulario__grupo" id="grupos__observations">
+                                                         <label for="observations" class="formulario__label">Observation</label>
+                                                         <div class="formulario__grupo-textarea">
+                                                            <textarea type="text" id="observations" class="formulario__input" name="observations" placeholder=""></textarea>
+                                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                         </div>
+                                                         <p class="formulario__input-error"></p>
+                                                      </div>
+                                                </div>
+                                             </div>                                                                                  
                                              </div>
-                                             </div>                                                                                   
-                                             </div>
-                                          </div>
-                                       </div>
+                                          
+                                       
                                        <div class="login-btn-inner">
                                        <div class="row">
                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                       <div class="login-horizental">
-                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Data</button>
+                                          <div class="formulario__mensajes" id="formulario__mensajes">
+                                             <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please enter write full form</p>
+                                          </div>
+                                          <div class="formulario__grupo formulario__grupo-btn-enviar">
+                                             <button class="formulario__btn" type="submit">Save Data</button>
+                                          </div>
                                        </div>
                                        </div>
                                        </div>
-                                       </div>
-                                       </form>
+                                       
+                                    </form>
                                     </div>
                                  </div>
                               </div>

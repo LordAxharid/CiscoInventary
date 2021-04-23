@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 
 
 use App\Inventory;
-use App\Loan;
 use App\Channel;
 use DB;
 
@@ -39,7 +38,8 @@ class InventoryController extends Controller
             ['section' => $data['section'], 'position' => 
             $data['position'], 'state' => $data['state'], 'product' => $data['product'], 'pdrpid' => 
             $data['pdrpid'], 'serial' => $data['serial'], 'code' => 
-            $data['code'], 'observation' => $data['observation']]
+            $data['code'] , 'channel' => 
+            $data['channel'], 'observation' => $data['observation']]
         ]);
 
         return redirect('/Inventory')->with('success','Data saved');
@@ -62,14 +62,16 @@ class InventoryController extends Controller
         $data = $request->all();
         $section = $data['section'];
         $position = $data['position'];
+        $state = $data['state'];
         $product = $data['product'];
         $pdrpid = $data['pdrpid'];
         $serial = $data['serial'];
         $code = $data['code'];
+        $channel = $data['channel'];
         $observation = $data['observation'];
 
-        Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'product'=>$data['product'], 
-        'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'observation'=>$data['observation']]);
+        Inventory::where('id',$id)->update(['section'=>$data['section'], 'position'=>$data['position'], 'state'=>$data['state'], 'product'=>$data['product'], 
+        'pdrpid'=>$data['pdrpid'], 'serial'=>$data['serial'], 'code'=>$data['code'], 'channel'=>$data['channel'], 'observation'=>$data['observation']]);
         return redirect('/Inventory')->with('success','Data saved');
 
     }

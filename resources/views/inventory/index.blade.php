@@ -25,7 +25,7 @@
                               <tr>
                                  <th></th>
                                  <th data-field="plus">Lend</th>
-                                 <th data-field="name" data-editable="true">Section</th>
+                                 <th data-field="section" data-editable="true">Section</th>
                                  <th data-field="email" data-editable="true">Position</th>
                                  <th data-field="phone" data-editable="true">State</th>
                                  <th data-field="complete">Product</th>
@@ -72,7 +72,6 @@
                                 
                                  @include('inventory.modalLoan') </td>
                               </tr>
-                            
                               @endforeach
 
                            
@@ -84,9 +83,10 @@
                    
                      </div>
                      @include('inventory.modalAdd')
-                    
+                     @include('inventory.modalLoan')
+                   
                   </div>
-                  @include('inventory.modalDelete')
+                  
                </div>
             </div>
          </div>

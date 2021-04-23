@@ -1,124 +1,20 @@
 (function ($) {
  "use strict";
  // Validation for order form
-		$(".add-professors").validate(
+		$(".add-channel").validate(
 		{					
 			rules:
 			{	
-				firstname:
-				{
-					required: true
-				},
-				lastname:
-				{
-					required: true
-				},
-				address:
-				{
-					required: true
-				},
-				department:
-				{
-					required: true
-				},
-				postcode:
-				{
-					required: true
-				},
-				imageico:
-				{
-					required: true
-				},
-				mobileno:
-				{
-					required: true
-				},
-				description:
-				{
-					required: true
-				},
-				gender:
-				{
-					required: true
-				},
-				country:
-				{
-					required: true
-				},
-				state:
-				{
-					required: true
-				},
-				city:
-				{
-					required: true
-				},
-				website:
-				{
-					required: true
-				},
-				finish:
+				nchannel:
 				{
 					required: true
 				}
 			},
 			messages:
 			{	
-				firstname:
+				nchannel:
 				{
-					required: 'Please enter first name'
-				},
-				lastname:
-				{
-					required: 'Please enter last name'
-				},
-				address:
-				{
-					required: 'Please enter your address'
-				},
-				department:
-				{
-					required: 'Please enter department'
-				},
-				postcode:
-				{
-					required: 'Please enter postcode'
-				},
-				imageico:
-				{
-					required: 'Please upload image'
-				},
-				mobileno:
-				{
-					required: 'Please enter mobile number'
-				},
-				description:
-				{
-					required: 'Please enter description'
-				},
-				gender:
-				{
-					required: 'Please select gender'
-				},
-				country:
-				{
-					required: 'Please select country'
-				},
-				state:
-				{
-					required: 'Please select state'
-				},
-				city:
-				{
-					required: 'Please select city'
-				},
-				website:
-				{
-					required: 'Please enter website url'
-				},
-				finish:
-				{
-					required: 'Please select date of birth'
+					required: 'Please enter name channel'
 				}
 			},					
 			
@@ -186,126 +82,72 @@
 		});
  
  // Validation for order form
-		$(".addcourse").validate(
+		$(".add-inventory").validate(
 		{					
 			rules:
 			{	
-				coursename:
+				
+				position:
 				{
 					required: true
 				},
-				finish:
+				state:
 				{
 					required: true
 				},
-				duration:
+				product:
 				{
 					required: true
 				},
-				price:
+				pdrpid:
 				{
 					required: true
 				},
-				imageico:
+				serial:
 				{
 					required: true
 				},
-				department:
+				code:
 				{
 					required: true
 				},
-				description:
-				{
-					required: true
-				},
-				crprofessor:
-				{
-					required: true
-				},
-				year:
-				{
-					required: true
-				},
-				email:
+				observation:
 				{
 					required: true,
-					email: true
-				},
-				phoneno:
-				{
-					required: true
-				},
-				password:
-				{
-					required: true,
-					minlength: 3,
-					maxlength: 20
-				},
-				confarmpassword:
-				{
-					required: true,
-					minlength: 3,
-					maxlength: 20
 				}
 			},
 			messages:
 			{	
-				coursename:
-				{
-					required: 'Please enter course name'
-				},
-				finish:
-				{
-					required: 'Please select date of birth'
-				},
-				duration:
-				{
-					required: 'Please enter duration'
-				},
-				price:
-				{
-					required: 'Please enter price'
-				},
-				imageico:
-				{
-					required: 'Please enter image'
-				},
-				department:
-				{
-					required: 'Please enter department'
-				},
-				description:
-				{
-					required: 'Please enter description'
-				},
-				crprofessor:
-				{
-					required: 'Please enter course professor'
-				},
-				year:
-				{
-					required: 'Please enter year'
-				},
-				email:
-				{
-					required: 'Please enter your email address',
-					email: 'Please enter a VALID email address'
-				},
-				phoneno:
-				{
-					required: 'Please enter mobile number'
-				},
-				password:
-				{
-					required: 'Please enter your password'
-				},
-				confarmpassword:
-				{
-					required: 'Please enter your confarm password'
-				}
 				
+				position:
+				{
+					required: 'Please enter position'
+				},
+				state:
+				{
+					required: 'Please select state'
+				},
+				product:
+				{
+					required: 'Please enter product'
+				},
+				pdrpid:
+				{
+					required: 'Please enter pdrpid'
+				},
+				serial:
+				{
+					required: 'Please enter serial'
+				},
+				code:
+				{
+					required: 'Please enter code'
+				},
+				observation:
+				{
+					required: 'Please enter observation'
+				}
 			},					
-			
 			errorPlacement: function(error, element)
 			{
 				error.insertAfter(element.parent());
@@ -580,4 +422,105 @@
 		});
 		
  
-})(jQuery); 
+})(jQuery);
+
+const formulario=document.getElementById('formulario-invet');
+const inputs= document.querySelectorAll('#formulario-invet input');
+const textareas= document.querySelectorAll('#formulario-invet textarea');
+const expresiones = {
+	position: /^[a-zA-Z0-9\_\-]{1,16}$/, // Letras, numeros, guion y guion_bajo
+	product: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	pdrpid: /^[a-zA-Z0-9\_\-]{1,20}$/, // Letras, numeros, guion y guion_bajo
+	serial: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
+	code: /^[a-zA-Z0-9\_\-]{1,20}$/, // Letras, numeros, guion y guion_bajo
+	observation: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+const campos = {
+	position: false,
+	product: false,
+	pdrpid: false,
+	serial: false,
+	code: false,
+	observation: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name){
+		case "position":
+			validarCampo(expresiones.position, e.target, 'position');
+		break;
+		case "product":
+			validarCampo(expresiones.product, e.target, 'product');
+		break;
+		case "pdrpid":
+			validarCampo(expresiones.pdrpid, e.target, 'pdrpid');
+		break;
+		case "serial":
+			validarCampo(expresiones.serial, e.target, 'serial');
+		break;
+		case "code":
+			validarCampo(expresiones.code, e.target, 'code');
+		break;
+		case "observation":
+			validarCampo1(expresiones.observation, e.target, 'observation');
+		break;
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+	if (expresion.test(input.value)) {
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error--activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+const validarCampo1 = (expresion, textarea, campo) => {
+	if (expresion.test(textarea.value)) {
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error--activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+
+textareas.forEach((textarea) => {
+	textarea.addEventListener('keyup', validarFormulario);
+	textarea.addEventListener('blur', validarFormulario);
+});
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+	
+
+	if (campos.position && campos.product && campos.pdrpid && campos.serial && campos.code && campos.observation ) {
+		formulario.reset();
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		e.preventDefault();
+	}
+});
+
+

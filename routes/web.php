@@ -30,7 +30,7 @@ Route::post('/Inventory/EditItem/{id}', 'inventoryController@update');
 Route::get('/loans', 'LoanController@index');
 
 //Rutas De Los Canales
-Route::Resource('/Channels', 'ChannelsController');
+Route::Resource('/Channel', 'ChannelsController');
 
 //Rutas De Graficos
 Route::get('/Charts', 'ChartsController@ChartLoanChannels');
