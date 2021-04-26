@@ -20,11 +20,7 @@
                                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                              <div class="basic-login-inner modal-basic-inner">
                                                 <h3>Lend Device</h3>
-<<<<<<< Updated upstream
                                                 <form action="{{ url('/Inventory/UpdAddLoan/'.$inventory->id) }}" method="POST" name="formulario-loa" id="formulario-loan" class="formulario-loan">
-=======
-                                                <form action="{{ url('/Inventory/UpdAddLoan/'.$inventory->id) }}" method="POST">
->>>>>>> Stashed changes
                                                    {{ csrf_field() }}
                                                    <div class="form-group-inner">
                                                       <div class="row">
@@ -33,7 +29,6 @@
                                                             <input type="text" class="form-control" name="idInv" id="idInv" value="{{ $inventory->id }}"/>
                                                          </div>
                                                          <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12">
-<<<<<<< Updated upstream
                                                             <div class="formulario__grupo" id="grupos__idloan">
                                                                <label for="idloan" class="formulario__label">Id Loan</label>
                                                                <div class="formulario__grupo-input">
@@ -42,10 +37,6 @@
                                                                </div>
                                                                <p class="formulario__input-error"></p>
                                                             </div>
-=======
-                                                            <label class="login2">Id Loan</label>
-                                                            <input type="text" class="form-control" name="idloan" id="idloan" />
->>>>>>> Stashed changes
                                                          </div>
                                                          <div class="col-lg-5 col-md-8 col-sm-8 col-xs-12">
                                                             <label class="login2">Devices Borrowed PID</label>
@@ -66,7 +57,6 @@
                                                    <div class="form-group-inner">
                                                       <div class="row">
                                                          <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-<<<<<<< Updated upstream
                                                             <div class="formulario__grupo" id="grupos__dateloan">
                                                                <label for="dateloan" class="formulario__label">Loan Date</label>
                                                                <div class="formulario__grupo-input">
@@ -85,14 +75,6 @@
                                                                </div>
                                                             <p class="formulario__input-error"></p>
                                                          </div>
-=======
-                                                            <label class="login2">Loan Date</label>
-                                                            <input type="date" class="form-control" name="dateloan" id="dateloan"/>
-                                                         </div>
-                                                         <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
-                                                            <label class="login2">Estimate Return</label>
-                                                            <input type="date" class="form-control" name="estimateddate" id="estimateddate" />
->>>>>>> Stashed changes
                                                          </div>
                                                       </div>
                                                       <div class="form-group-inner">
@@ -122,7 +104,6 @@
                                                          </div>
                                                       </div>
                                                    </div>
-<<<<<<< Updated upstream
                                              
                                              <div class="form-group-inner">
                                                 <div class="row">
@@ -140,24 +121,10 @@
                                              </div>
                                           
                                        
-=======
-                                             </div>
-                                             <div class="form-group-inner">
-                                             <div class="row">
-                                             <div class="col-lg-12 col-md-8 col-sm-8 col-xs-12">
-                                             <label class="login2">Observation</label>
-                                             <textarea type="text" class="form-control" name="observation" id="observation"></textarea>
-                                             </div>
-                                             </div>                                                                                   
-                                             </div>
-                                          </div>
-                                       </div>
->>>>>>> Stashed changes
                                        <div class="login-btn-inner">
                                        <div class="row">
                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-<<<<<<< Updated upstream
                                           <div class="formulario__mensajes" id="formulario__mensajes">
                                              <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please enter write full form</p>
                                           </div>
@@ -169,15 +136,6 @@
                                        </div>
                                        
                                     </form>
-=======
-                                       <div class="login-horizental">
-                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Data</button>
-                                       </div>
-                                       </div>
-                                       </div>
-                                       </div>
-                                       </form>
->>>>>>> Stashed changes
                                     </div>
                                  </div>
                               </div>
