@@ -5,11 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Cisco Inventary</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metadatos')
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css')}}">
 
     
     <script src="{{ asset('https://kit.fontawesome.com/68d9183b0a.js')}}" crossorigin="anonymous"></script>
@@ -62,7 +64,9 @@
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/metisMenu/metisMenu-vertical.css') }}">
-   
+   <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('css/form/all-type-forms.css')}}">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -78,15 +82,12 @@
 </head>
 
 <!-- Pre loader -->
-<body >
-<div class="center-preloader" id="onload">
-<div><img src="{{ asset('img/preloader.gif') }}"></div>
-</div>
+<body>
+
 
 
 
 @include('layouts.header')
-
 
 
 @include('layouts.slidebar')
@@ -145,7 +146,12 @@
     <!-- calendar JS
 		============================================ -->
     <script src="{{ asset('js/calendar/moment.min.js') }}"></script>
-    
+    <!-- form validate JS
+		============================================ -->
+    <script src="{{ asset('js/form-validation/jquery.form.min.js')}}"></script>
+    <script src="{{ asset('js/form-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('js/form-validation/form-active.js')}}"></script>
+    <script src="{{ asset('js/form-validation/form-loan.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="{{ asset('js/plugins.js') }}"></script>

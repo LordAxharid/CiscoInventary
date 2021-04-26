@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Channel;
-use DataTables;
+use DB;
 
 class ChannelsController extends Controller
 {
@@ -15,28 +15,10 @@ class ChannelsController extends Controller
      */
     public function index(Request $request)
     {
-        /*$channel = Channel::get();
-        return view('channels.index')->with(compact('channel'));*/
+       
+        $channel = DB::table('Channel')->get();
 
-        $channel = Channel::first()->get();
-        
-        if ($request->ajax()) {
-            $data = Channel::first()->get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-   
-                           $btn = '<a ref="javascript:void(0)" data-toggle="modal" data-target="#ajaxModel"  data-id="'.$row->id.'" data-original-title="Edit" class="far fa-edit editbtn"  style="color: #009bdd;">Edit</a>';
-   
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="far fa-trash-alt deletebtn"  style="color: #009bdd;">Delete</a>';
-    
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
-      
-        return view('Channels.index')->with(compact('channel'));
+        return view('channels.index', ['channel' => $channel]);
         
     }
 
@@ -58,10 +40,20 @@ class ChannelsController extends Controller
      */
     public function store(Request $request)
     {
-       Channel::updateOrCreate(['id' => $request->channel_id],
-                ['nchannel' => $request->nchannel]);
+<<<<<<< Updated upstream
+        $this->validate($request, [
+            'nchannel' => 'required',
+        ]);
 
-        return response()->json(['success' => 'canal Registrado correctamente']);
+        $channel= new Channel;
+        $channel->nchannel =$request->input('nchannel');
+
+        $channel->save(); 
+
+        //return redirect('/Channels')->with('success','Data saved');
+=======
+>>>>>>> Stashed changes
+    
     }
 
     /**
@@ -83,8 +75,7 @@ class ChannelsController extends Controller
      */
     public function edit($id)
     {
-        $channel = Channel::find($id);
-        return response()->json($channel);
+       
     }
 
     /**
@@ -107,9 +98,6 @@ class ChannelsController extends Controller
      */
     public function destroy($id)
     {
-        $channel = Channel::findOrFail($id);
-        $channel->delete();
-     
-        return response()->json(['success'=>'Inventary deleted successfully.']);
+       
     }
 }
